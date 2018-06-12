@@ -23,203 +23,207 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EZX-Ta-gkm" userLabel="Time Stack">
-                                <rect key="frame" x="-37.5" y="120" width="450.5" height="50"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SAA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OZW-VW-czg" userLabel="Time Slot Beg">
+                                <rect key="frame" x="25" y="65" width="60" height="24"/>
+                                <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="24"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="EZX-Ta-gkm" userLabel="Time Stack">
+                                <rect key="frame" x="25" y="109" width="325" height="37"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GYZ-c4-uv1" userLabel="Time Slot H1">
-                                        <rect key="frame" x="0.0" y="0.0" width="50.5" height="50"/>
-                                        <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="44"/>
-                                        <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="36" placeholderIntrinsicHeight="37" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GYZ-c4-uv1" userLabel="Time Slot H1">
+                                        <rect key="frame" x="0.0" y="0.0" width="36" height="37"/>
+                                        <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="37"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BP7-Zt-eiH" userLabel="Time Slot H2">
-                                        <rect key="frame" x="50.5" y="0.0" width="50" height="50"/>
-                                        <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="44"/>
-                                        <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="36" placeholderIntrinsicHeight="37" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BP7-Zt-eiH" userLabel="Time Slot H2">
+                                        <rect key="frame" x="36" y="0.0" width="36" height="37"/>
+                                        <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="37"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqq-Rk-eR5" userLabel="Time Slot Sep1">
-                                        <rect key="frame" x="100.5" y="0.0" width="50" height="50"/>
-                                        <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="44"/>
-                                        <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="36.5" placeholderIntrinsicHeight="37" text="h" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqq-Rk-eR5" userLabel="Time Slot Sep1">
+                                        <rect key="frame" x="72" y="0.0" width="36.5" height="37"/>
+                                        <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="37"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8KB-ji-23H" userLabel="Time Slot M1">
-                                        <rect key="frame" x="150.5" y="0.0" width="50" height="50"/>
-                                        <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="44"/>
-                                        <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="36" placeholderIntrinsicHeight="37" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8KB-ji-23H" userLabel="Time Slot M1">
+                                        <rect key="frame" x="108.5" y="0.0" width="36" height="37"/>
+                                        <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="37"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AVJ-hB-iTk" userLabel="Time Slot M2">
-                                        <rect key="frame" x="200.5" y="0.0" width="50" height="50"/>
-                                        <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="44"/>
-                                        <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="36" placeholderIntrinsicHeight="37" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AVJ-hB-iTk" userLabel="Time Slot M2">
+                                        <rect key="frame" x="144.5" y="0.0" width="36" height="37"/>
+                                        <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="37"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="evq-zk-qhb" userLabel="Time Slot Sep2">
-                                        <rect key="frame" x="250.5" y="0.0" width="50" height="50"/>
-                                        <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="44"/>
-                                        <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="36" placeholderIntrinsicHeight="37" text="m" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="evq-zk-qhb" userLabel="Time Slot Sep2">
+                                        <rect key="frame" x="180.5" y="0.0" width="36" height="37"/>
+                                        <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="37"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U0f-gw-XFK" userLabel="Time Slot S1">
-                                        <rect key="frame" x="300.5" y="0.0" width="50" height="50"/>
-                                        <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="44"/>
-                                        <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="36.5" placeholderIntrinsicHeight="37" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U0f-gw-XFK" userLabel="Time Slot S1">
+                                        <rect key="frame" x="216.5" y="0.0" width="36.5" height="37"/>
+                                        <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="37"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vGy-FB-RYZ" userLabel="Time Slot S2">
-                                        <rect key="frame" x="350.5" y="0.0" width="50" height="50"/>
-                                        <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="44"/>
-                                        <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="36" placeholderIntrinsicHeight="37" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vGy-FB-RYZ" userLabel="Time Slot S2">
+                                        <rect key="frame" x="253" y="0.0" width="36" height="37"/>
+                                        <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="37"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AYz-Dg-tAr" userLabel="Time Slot Sep3">
-                                        <rect key="frame" x="400.5" y="0.0" width="50" height="50"/>
-                                        <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="44"/>
-                                        <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="36" placeholderIntrinsicHeight="37" text="s" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AYz-Dg-tAr" userLabel="Time Slot Sep3">
+                                        <rect key="frame" x="289" y="0.0" width="36" height="37"/>
+                                        <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="37"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="vGy-FB-RYZ" firstAttribute="width" secondItem="GYZ-c4-uv1" secondAttribute="width" id="PdI-Ej-4gX"/>
-                                    <constraint firstItem="BP7-Zt-eiH" firstAttribute="width" secondItem="GYZ-c4-uv1" secondAttribute="width" id="Xpl-YR-BFJ"/>
-                                    <constraint firstItem="AVJ-hB-iTk" firstAttribute="width" secondItem="GYZ-c4-uv1" secondAttribute="width" id="fzk-Cp-Lh4"/>
-                                    <constraint firstItem="8KB-ji-23H" firstAttribute="width" secondItem="GYZ-c4-uv1" secondAttribute="width" id="gHF-xd-yQb"/>
-                                    <constraint firstItem="U0f-gw-XFK" firstAttribute="width" secondItem="GYZ-c4-uv1" secondAttribute="width" id="ikg-gc-kEl"/>
+                                    <constraint firstItem="AYz-Dg-tAr" firstAttribute="width" secondItem="GYZ-c4-uv1" secondAttribute="width" id="S87-9W-fP0"/>
+                                    <constraint firstItem="AVJ-hB-iTk" firstAttribute="width" secondItem="GYZ-c4-uv1" secondAttribute="width" id="Vms-uc-hb6"/>
+                                    <constraint firstItem="U0f-gw-XFK" firstAttribute="width" secondItem="GYZ-c4-uv1" secondAttribute="width" id="baE-4H-dRk"/>
+                                    <constraint firstItem="evq-zk-qhb" firstAttribute="width" secondItem="GYZ-c4-uv1" secondAttribute="width" id="fdC-NA-XU4"/>
+                                    <constraint firstItem="hqq-Rk-eR5" firstAttribute="width" secondItem="GYZ-c4-uv1" secondAttribute="width" id="hnl-p0-zBF"/>
+                                    <constraint firstItem="BP7-Zt-eiH" firstAttribute="width" secondItem="GYZ-c4-uv1" secondAttribute="width" id="kLM-ic-vOd"/>
+                                    <constraint firstItem="vGy-FB-RYZ" firstAttribute="width" secondItem="GYZ-c4-uv1" secondAttribute="width" id="rKq-5z-pHI"/>
+                                    <constraint firstItem="8KB-ji-23H" firstAttribute="width" secondItem="GYZ-c4-uv1" secondAttribute="width" id="xIq-sd-TNy"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HOl-vc-Xhi" userLabel="Date Stack">
-                                <rect key="frame" x="87" y="278" width="168" height="20.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HOl-vc-Xhi" userLabel="Date Stack">
+                                <rect key="frame" x="67" y="210" width="241.5" height="24"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="31z-Sp-ivf" userLabel="Date Slot 1">
-                                        <rect key="frame" x="0.0" y="0.0" width="42" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TUE " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="31z-Sp-ivf" userLabel="Date Slot 1">
+                                        <rect key="frame" x="0.0" y="0.0" width="64" height="24"/>
+                                        <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="24"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qjp-tr-abb" userLabel="Date Slot 2">
-                                        <rect key="frame" x="42" y="0.0" width="42" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JUN " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qjp-tr-abb" userLabel="Date Slot 2">
+                                        <rect key="frame" x="64" y="0.0" width="66" height="24"/>
+                                        <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="24"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l0X-Ig-c0N" userLabel="Date Slot 3">
-                                        <rect key="frame" x="84" y="0.0" width="42" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12, " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l0X-Ig-c0N" userLabel="Date Slot 3">
+                                        <rect key="frame" x="130" y="0.0" width="42" height="24"/>
+                                        <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="24"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YvN-DO-dAa" userLabel="Date Slot 4">
-                                        <rect key="frame" x="126" y="0.0" width="42" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YvN-DO-dAa" userLabel="Date Slot 4">
+                                        <rect key="frame" x="172" y="0.0" width="69.5" height="24"/>
+                                        <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="24"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AmB-SD-UCz" userLabel="Rincon Mountain Tech">
-                                <rect key="frame" x="166" y="323" width="42" height="21"/>
+                                <rect key="frame" x="166" y="323" width="27" height="12"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SqU-V8-7C9" userLabel="Toggle Region">
-                                <rect key="frame" x="100" y="620" width="75" height="32"/>
+                                <rect key="frame" x="140" y="616" width="110" height="36"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="75" id="JBY-vz-Htd"/>
+                                    <constraint firstAttribute="width" constant="110" id="uIy-G9-Cke"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Region">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="onClickToggleRegion:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zvG-3o-fO3"/>
+                                    <action selector="onClickToggleRegion:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wUk-fT-dZv"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hbp-VD-rv3" userLabel="Timezone Stack">
-                                <rect key="frame" x="87" y="76" width="42" height="20.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7N9-o0-oy1" userLabel="Time Zone Slot">
-                                        <rect key="frame" x="0.0" y="0.0" width="42" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OZW-VW-czg" userLabel="Time Slot Beg">
-                                <rect key="frame" x="30" y="100" width="0.0" height="0.0"/>
-                                <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="22"/>
-                                <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VeW-Uc-TuD" userLabel="Time Slot End">
-                                <rect key="frame" x="345" y="190" width="0.0" height="0.0"/>
-                                <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="22"/>
-                                <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Gt-GP-r8v" userLabel="Toggle Theme">
-                                <rect key="frame" x="15" y="620" width="75" height="32"/>
+                                <rect key="frame" x="15" y="616" width="110" height="36"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="75" id="wye-O9-yaZ"/>
+                                    <constraint firstAttribute="width" constant="110" id="MES-VK-3Hm"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Theme">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="onClickToggleTheme:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qNe-ZY-W6V"/>
+                                    <action selector="onClickToggleTheme:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MGG-zY-xbI"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UlS-5R-fEB" userLabel="Current Region Selected">
-                                <rect key="frame" x="185" y="652" width="0.0" height="0.0"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hbp-VD-rv3" userLabel="Timezone Stack">
+                                <rect key="frame" x="167.5" y="117" width="100.5" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MST" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7N9-o0-oy1" userLabel="Time Zone Slot">
+                                <rect key="frame" x="157.5" y="254" width="60.5" height="24"/>
+                                <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" ZA ASUBUHI" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VeW-Uc-TuD" userLabel="Time Slot End">
+                                <rect key="frame" x="180" y="166" width="180" height="24"/>
+                                <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="US" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UlS-5R-fEB" userLabel="Current Region Selected">
+                                <rect key="frame" x="260" y="626.5" width="23" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="EZX-Ta-gkm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="7JZ-iv-vpz"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3Gt-GP-r8v" secondAttribute="bottom" constant="15" id="ITg-Ue-8KD"/>
-                            <constraint firstItem="EZX-Ta-gkm" firstAttribute="top" secondItem="OZW-VW-czg" secondAttribute="bottom" constant="20" id="SdR-xP-rjI"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="UlS-5R-fEB" secondAttribute="bottom" constant="15" id="T1e-kO-5y0"/>
-                            <constraint firstItem="OZW-VW-czg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="XrX-X5-q1I"/>
-                            <constraint firstItem="UlS-5R-fEB" firstAttribute="leading" secondItem="SqU-V8-7C9" secondAttribute="trailing" constant="10" id="Zfh-rL-We0"/>
-                            <constraint firstItem="EZX-Ta-gkm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bZk-69-G9V"/>
-                            <constraint firstItem="3Gt-GP-r8v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="fAB-OU-tpx"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="SqU-V8-7C9" secondAttribute="bottom" constant="15" id="lrI-RC-F44"/>
-                            <constraint firstItem="VeW-Uc-TuD" firstAttribute="top" secondItem="EZX-Ta-gkm" secondAttribute="bottom" constant="20" id="nG2-qQ-4n6"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VeW-Uc-TuD" secondAttribute="trailing" constant="30" id="nsR-16-mtF"/>
-                            <constraint firstItem="SqU-V8-7C9" firstAttribute="leading" secondItem="3Gt-GP-r8v" secondAttribute="trailing" constant="10" id="rrb-VJ-bpg"/>
+                            <constraint firstItem="7N9-o0-oy1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0J5-wS-JAi"/>
+                            <constraint firstItem="UlS-5R-fEB" firstAttribute="leading" secondItem="SqU-V8-7C9" secondAttribute="trailing" constant="10" id="1K4-Ln-ENi"/>
+                            <constraint firstItem="VeW-Uc-TuD" firstAttribute="top" secondItem="EZX-Ta-gkm" secondAttribute="bottom" constant="20" id="4tK-4J-l2r"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3Gt-GP-r8v" secondAttribute="bottom" constant="15" id="7YV-y0-jJL"/>
+                            <constraint firstItem="HOl-vc-Xhi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FBg-6V-dHh"/>
+                            <constraint firstItem="EZX-Ta-gkm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HWV-vy-crn"/>
+                            <constraint firstItem="SqU-V8-7C9" firstAttribute="leading" secondItem="3Gt-GP-r8v" secondAttribute="trailing" constant="15" id="KZY-Cg-FDu"/>
+                            <constraint firstItem="HOl-vc-Xhi" firstAttribute="top" secondItem="VeW-Uc-TuD" secondAttribute="bottom" constant="20" id="TvG-La-ZtP"/>
+                            <constraint firstItem="OZW-VW-czg" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="65" id="U0i-va-gDP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="UlS-5R-fEB" secondAttribute="bottom" constant="20" id="Uw1-6X-ngj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VeW-Uc-TuD" secondAttribute="trailing" constant="15" id="VeS-mh-kqz"/>
+                            <constraint firstItem="3Gt-GP-r8v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="X4r-hb-wxX"/>
+                            <constraint firstItem="EZX-Ta-gkm" firstAttribute="top" secondItem="OZW-VW-czg" secondAttribute="bottom" constant="20" id="XIx-eY-2yC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="SqU-V8-7C9" secondAttribute="bottom" constant="15" id="XO3-ug-4ue"/>
+                            <constraint firstItem="7N9-o0-oy1" firstAttribute="top" secondItem="HOl-vc-Xhi" secondAttribute="bottom" constant="20" id="ojQ-Bw-ajK"/>
+                            <constraint firstItem="OZW-VW-czg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="sRd-5t-dpH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="currentRegionSelected" destination="UlS-5R-fEB" id="kMj-r1-Om5"/>
-                        <outlet property="dateSlot1" destination="31z-Sp-ivf" id="rUm-Ph-bf6"/>
-                        <outlet property="dateSlot2" destination="qjp-tr-abb" id="yvd-3T-ezo"/>
-                        <outlet property="dateSlot3" destination="l0X-Ig-c0N" id="GQE-3p-PTk"/>
-                        <outlet property="dateSlot4" destination="YvN-DO-dAa" id="joX-i9-dFQ"/>
-                        <outlet property="timeSlotBeg" destination="OZW-VW-czg" id="4bp-oS-aVc"/>
-                        <outlet property="timeSlotEnd" destination="VeW-Uc-TuD" id="kX4-5d-LtM"/>
-                        <outlet property="timeSlotH1" destination="GYZ-c4-uv1" id="ytb-0g-bQv"/>
-                        <outlet property="timeSlotH2" destination="BP7-Zt-eiH" id="qX1-z9-USx"/>
-                        <outlet property="timeSlotM1" destination="8KB-ji-23H" id="aqX-sj-SaH"/>
-                        <outlet property="timeSlotM2" destination="AVJ-hB-iTk" id="elM-I1-h6A"/>
-                        <outlet property="timeSlotS1" destination="U0f-gw-XFK" id="4x5-h0-OYc"/>
-                        <outlet property="timeSlotS2" destination="vGy-FB-RYZ" id="f4A-co-h8W"/>
-                        <outlet property="timeSlotSep1" destination="hqq-Rk-eR5" id="aqe-jx-CfH"/>
-                        <outlet property="timeSlotSep2" destination="evq-zk-qhb" id="el7-lw-QUu"/>
-                        <outlet property="timeSlotSep3" destination="AYz-Dg-tAr" id="FxT-Yd-ODn"/>
-                        <outlet property="timeZoneSlot" destination="7N9-o0-oy1" id="DIO-mW-WMk"/>
+                        <outlet property="currentRegionSelected" destination="UlS-5R-fEB" id="GtD-4L-UHX"/>
+                        <outlet property="dateSlot1" destination="31z-Sp-ivf" id="sgc-w2-j9q"/>
+                        <outlet property="dateSlot2" destination="qjp-tr-abb" id="ud6-P4-muK"/>
+                        <outlet property="dateSlot3" destination="l0X-Ig-c0N" id="FXR-J1-NvZ"/>
+                        <outlet property="dateSlot4" destination="YvN-DO-dAa" id="bwi-Sv-AdK"/>
+                        <outlet property="timeSlotBeg" destination="OZW-VW-czg" id="UOT-ru-Xi4"/>
+                        <outlet property="timeSlotEnd" destination="VeW-Uc-TuD" id="hhd-9G-9Mh"/>
+                        <outlet property="timeSlotH1" destination="GYZ-c4-uv1" id="j0X-8C-wOz"/>
+                        <outlet property="timeSlotH2" destination="BP7-Zt-eiH" id="v8i-1o-trN"/>
+                        <outlet property="timeSlotM1" destination="8KB-ji-23H" id="b5p-Hj-Vlr"/>
+                        <outlet property="timeSlotM2" destination="AVJ-hB-iTk" id="Luf-hu-LLy"/>
+                        <outlet property="timeSlotS1" destination="U0f-gw-XFK" id="oIL-bX-ZT7"/>
+                        <outlet property="timeSlotS2" destination="vGy-FB-RYZ" id="NhA-Ay-Kw4"/>
+                        <outlet property="timeSlotSep1" destination="hqq-Rk-eR5" id="Shu-0A-cp5"/>
+                        <outlet property="timeSlotSep2" destination="evq-zk-qhb" id="eSv-82-H4b"/>
+                        <outlet property="timeSlotSep3" destination="AYz-Dg-tAr" id="fhv-ne-P3W"/>
+                        <outlet property="timeZoneSlot" destination="7N9-o0-oy1" id="oKb-kp-UFE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

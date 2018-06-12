@@ -60,7 +60,6 @@ class ClockController: UIViewController {
     var currentRegionDescription : String = ""
     var timeFormat: String = ""
     
-    
     @IBOutlet weak var timeSlotBeg: UILabel!
     @IBOutlet weak var timeSlotH1: UILabel!
     @IBOutlet weak var timeSlotH2: UILabel!
@@ -71,13 +70,15 @@ class ClockController: UIViewController {
     @IBOutlet weak var timeSlotS1: UILabel!
     @IBOutlet weak var timeSlotS2: UILabel!
     @IBOutlet weak var timeSlotSep3: UILabel!
-    @IBOutlet weak var timeSlotEnd: UILabel!
     @IBOutlet weak var dateSlot1: UILabel!
     @IBOutlet weak var dateSlot2: UILabel!
     @IBOutlet weak var dateSlot3: UILabel!
     @IBOutlet weak var dateSlot4: UILabel!
     @IBOutlet weak var timeZoneSlot: UILabel!
+    @IBOutlet weak var timeSlotEnd: UILabel!
     @IBOutlet weak var currentRegionSelected: UILabel!
+    
+    //currentRegionSelected
     
     @IBAction func onClickToggleTheme(_ sender: Any) {
         if currentTheme == themes.count - 1 {
@@ -85,24 +86,24 @@ class ClockController: UIViewController {
         } else {
             currentTheme += 1
         }
-
+        
         updateTheme()
     }
-
+    
     @IBAction func onClickToggleRegion(_ sender: Any) {
         if currentRegion == regions.count - 1 {
             currentRegion = 0
         } else {
             currentRegion += 1
         }
-
+        
         updateClock()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ClockController.updateClock), userInfo: nil, repeats: true)
+//        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ClockController.updateClock), userInfo: nil, repeats: true)
     }
     
     override func didReceiveMemoryWarning() {

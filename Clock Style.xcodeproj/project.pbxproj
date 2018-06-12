@@ -15,6 +15,7 @@
 		6582C62120D03BEA008F2749 /* NeonTubes2.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6582C62020D03BEA008F2749 /* NeonTubes2.otf */; };
 		6582C62520D03C6F008F2749 /* DS-Digital.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6582C62320D03C6E008F2749 /* DS-Digital.ttf */; };
 		6582C62620D03C6F008F2749 /* lcddot.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6582C62420D03C6F008F2749 /* lcddot.ttf */; };
+		6582C62720D049CD008F2749 /* Orbitron-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6582C62220D03BFC008F2749 /* Orbitron-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -165,6 +166,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6582C62720D049CD008F2749 /* Orbitron-Bold.ttf in Resources */,
 				6582C62520D03C6F008F2749 /* DS-Digital.ttf in Resources */,
 				6582C61520D03A82008F2749 /* LaunchScreen.storyboard in Resources */,
 				6582C61220D03A82008F2749 /* Assets.xcassets in Resources */,
@@ -328,7 +330,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2HXVRM98MN;
-				INFOPLIST_FILE = "Clock Style/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Clock Style/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -346,7 +348,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2HXVRM98MN;
-				INFOPLIST_FILE = "Clock Style/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Clock Style/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
