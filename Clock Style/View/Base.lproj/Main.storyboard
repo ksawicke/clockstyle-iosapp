@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Orbitron-Bold.ttf">
+            <string>Orbitron-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Clock Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ClockController" customModule="Clock_Style" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EZX-Ta-gkm" userLabel="Time Stack">
+                                <rect key="frame" x="-37.5" y="120" width="450.5" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GYZ-c4-uv1" userLabel="Time Slot H1">
+                                        <rect key="frame" x="0.0" y="0.0" width="50.5" height="50"/>
+                                        <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="44"/>
+                                        <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BP7-Zt-eiH" userLabel="Time Slot H2">
+                                        <rect key="frame" x="50.5" y="0.0" width="50" height="50"/>
+                                        <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="44"/>
+                                        <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqq-Rk-eR5" userLabel="Time Slot Sep1">
+                                        <rect key="frame" x="100.5" y="0.0" width="50" height="50"/>
+                                        <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="44"/>
+                                        <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8KB-ji-23H" userLabel="Time Slot M1">
+                                        <rect key="frame" x="150.5" y="0.0" width="50" height="50"/>
+                                        <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="44"/>
+                                        <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AVJ-hB-iTk" userLabel="Time Slot M2">
+                                        <rect key="frame" x="200.5" y="0.0" width="50" height="50"/>
+                                        <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="44"/>
+                                        <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="evq-zk-qhb" userLabel="Time Slot Sep2">
+                                        <rect key="frame" x="250.5" y="0.0" width="50" height="50"/>
+                                        <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="44"/>
+                                        <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U0f-gw-XFK" userLabel="Time Slot S1">
+                                        <rect key="frame" x="300.5" y="0.0" width="50" height="50"/>
+                                        <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="44"/>
+                                        <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vGy-FB-RYZ" userLabel="Time Slot S2">
+                                        <rect key="frame" x="350.5" y="0.0" width="50" height="50"/>
+                                        <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="44"/>
+                                        <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AYz-Dg-tAr" userLabel="Time Slot Sep3">
+                                        <rect key="frame" x="400.5" y="0.0" width="50" height="50"/>
+                                        <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="44"/>
+                                        <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="vGy-FB-RYZ" firstAttribute="width" secondItem="GYZ-c4-uv1" secondAttribute="width" id="PdI-Ej-4gX"/>
+                                    <constraint firstItem="BP7-Zt-eiH" firstAttribute="width" secondItem="GYZ-c4-uv1" secondAttribute="width" id="Xpl-YR-BFJ"/>
+                                    <constraint firstItem="AVJ-hB-iTk" firstAttribute="width" secondItem="GYZ-c4-uv1" secondAttribute="width" id="fzk-Cp-Lh4"/>
+                                    <constraint firstItem="8KB-ji-23H" firstAttribute="width" secondItem="GYZ-c4-uv1" secondAttribute="width" id="gHF-xd-yQb"/>
+                                    <constraint firstItem="U0f-gw-XFK" firstAttribute="width" secondItem="GYZ-c4-uv1" secondAttribute="width" id="ikg-gc-kEl"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HOl-vc-Xhi" userLabel="Date Stack">
+                                <rect key="frame" x="87" y="278" width="168" height="20.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="31z-Sp-ivf" userLabel="Date Slot 1">
+                                        <rect key="frame" x="0.0" y="0.0" width="42" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qjp-tr-abb" userLabel="Date Slot 2">
+                                        <rect key="frame" x="42" y="0.0" width="42" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l0X-Ig-c0N" userLabel="Date Slot 3">
+                                        <rect key="frame" x="84" y="0.0" width="42" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YvN-DO-dAa" userLabel="Date Slot 4">
+                                        <rect key="frame" x="126" y="0.0" width="42" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AmB-SD-UCz" userLabel="Rincon Mountain Tech">
+                                <rect key="frame" x="166" y="323" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SqU-V8-7C9" userLabel="Toggle Region">
+                                <rect key="frame" x="100" y="620" width="75" height="32"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="JBY-vz-Htd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Region">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="onClickToggleRegion:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zvG-3o-fO3"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hbp-VD-rv3" userLabel="Timezone Stack">
+                                <rect key="frame" x="87" y="76" width="42" height="20.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7N9-o0-oy1" userLabel="Time Zone Slot">
+                                        <rect key="frame" x="0.0" y="0.0" width="42" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OZW-VW-czg" userLabel="Time Slot Beg">
+                                <rect key="frame" x="30" y="100" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="22"/>
+                                <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VeW-Uc-TuD" userLabel="Time Slot End">
+                                <rect key="frame" x="345" y="190" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="22"/>
+                                <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Gt-GP-r8v" userLabel="Toggle Theme">
+                                <rect key="frame" x="15" y="620" width="75" height="32"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="wye-O9-yaZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Theme">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="onClickToggleTheme:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qNe-ZY-W6V"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UlS-5R-fEB" userLabel="Current Region Selected">
+                                <rect key="frame" x="185" y="652" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="EZX-Ta-gkm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="7JZ-iv-vpz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3Gt-GP-r8v" secondAttribute="bottom" constant="15" id="ITg-Ue-8KD"/>
+                            <constraint firstItem="EZX-Ta-gkm" firstAttribute="top" secondItem="OZW-VW-czg" secondAttribute="bottom" constant="20" id="SdR-xP-rjI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="UlS-5R-fEB" secondAttribute="bottom" constant="15" id="T1e-kO-5y0"/>
+                            <constraint firstItem="OZW-VW-czg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="XrX-X5-q1I"/>
+                            <constraint firstItem="UlS-5R-fEB" firstAttribute="leading" secondItem="SqU-V8-7C9" secondAttribute="trailing" constant="10" id="Zfh-rL-We0"/>
+                            <constraint firstItem="EZX-Ta-gkm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bZk-69-G9V"/>
+                            <constraint firstItem="3Gt-GP-r8v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="fAB-OU-tpx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="SqU-V8-7C9" secondAttribute="bottom" constant="15" id="lrI-RC-F44"/>
+                            <constraint firstItem="VeW-Uc-TuD" firstAttribute="top" secondItem="EZX-Ta-gkm" secondAttribute="bottom" constant="20" id="nG2-qQ-4n6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VeW-Uc-TuD" secondAttribute="trailing" constant="30" id="nsR-16-mtF"/>
+                            <constraint firstItem="SqU-V8-7C9" firstAttribute="leading" secondItem="3Gt-GP-r8v" secondAttribute="trailing" constant="10" id="rrb-VJ-bpg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="currentRegionSelected" destination="UlS-5R-fEB" id="kMj-r1-Om5"/>
+                        <outlet property="dateSlot1" destination="31z-Sp-ivf" id="rUm-Ph-bf6"/>
+                        <outlet property="dateSlot2" destination="qjp-tr-abb" id="yvd-3T-ezo"/>
+                        <outlet property="dateSlot3" destination="l0X-Ig-c0N" id="GQE-3p-PTk"/>
+                        <outlet property="dateSlot4" destination="YvN-DO-dAa" id="joX-i9-dFQ"/>
+                        <outlet property="timeSlotBeg" destination="OZW-VW-czg" id="4bp-oS-aVc"/>
+                        <outlet property="timeSlotEnd" destination="VeW-Uc-TuD" id="kX4-5d-LtM"/>
+                        <outlet property="timeSlotH1" destination="GYZ-c4-uv1" id="ytb-0g-bQv"/>
+                        <outlet property="timeSlotH2" destination="BP7-Zt-eiH" id="qX1-z9-USx"/>
+                        <outlet property="timeSlotM1" destination="8KB-ji-23H" id="aqX-sj-SaH"/>
+                        <outlet property="timeSlotM2" destination="AVJ-hB-iTk" id="elM-I1-h6A"/>
+                        <outlet property="timeSlotS1" destination="U0f-gw-XFK" id="4x5-h0-OYc"/>
+                        <outlet property="timeSlotS2" destination="vGy-FB-RYZ" id="f4A-co-h8W"/>
+                        <outlet property="timeSlotSep1" destination="hqq-Rk-eR5" id="aqe-jx-CfH"/>
+                        <outlet property="timeSlotSep2" destination="evq-zk-qhb" id="el7-lw-QUu"/>
+                        <outlet property="timeSlotSep3" destination="AYz-Dg-tAr" id="FxT-Yd-ODn"/>
+                        <outlet property="timeZoneSlot" destination="7N9-o0-oy1" id="DIO-mW-WMk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

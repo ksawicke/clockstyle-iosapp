@@ -8,20 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		6582C60B20D03A81008F2749 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6582C60A20D03A81008F2749 /* AppDelegate.swift */; };
-		6582C60D20D03A81008F2749 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6582C60C20D03A81008F2749 /* ViewController.swift */; };
+		6582C60D20D03A81008F2749 /* ClockController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6582C60C20D03A81008F2749 /* ClockController.swift */; };
 		6582C61020D03A81008F2749 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6582C60E20D03A81008F2749 /* Main.storyboard */; };
 		6582C61220D03A82008F2749 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6582C61120D03A82008F2749 /* Assets.xcassets */; };
 		6582C61520D03A82008F2749 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6582C61320D03A82008F2749 /* LaunchScreen.storyboard */; };
+		6582C62120D03BEA008F2749 /* NeonTubes2.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6582C62020D03BEA008F2749 /* NeonTubes2.otf */; };
+		6582C62520D03C6F008F2749 /* DS-Digital.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6582C62320D03C6E008F2749 /* DS-Digital.ttf */; };
+		6582C62620D03C6F008F2749 /* lcddot.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6582C62420D03C6F008F2749 /* lcddot.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6582C60720D03A81008F2749 /* Clock Style.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clock Style.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6582C60A20D03A81008F2749 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6582C60C20D03A81008F2749 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6582C60C20D03A81008F2749 /* ClockController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockController.swift; sourceTree = "<group>"; };
 		6582C60F20D03A81008F2749 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6582C61120D03A82008F2749 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6582C61420D03A82008F2749 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6582C61620D03A82008F2749 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6582C62020D03BEA008F2749 /* NeonTubes2.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NeonTubes2.otf; sourceTree = "<group>"; };
+		6582C62220D03BFC008F2749 /* Orbitron-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Orbitron-Bold.ttf"; sourceTree = "<group>"; };
+		6582C62320D03C6E008F2749 /* DS-Digital.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DS-Digital.ttf"; sourceTree = "<group>"; };
+		6582C62420D03C6F008F2749 /* lcddot.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lcddot.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +62,49 @@
 			isa = PBXGroup;
 			children = (
 				6582C60A20D03A81008F2749 /* AppDelegate.swift */,
-				6582C60C20D03A81008F2749 /* ViewController.swift */,
-				6582C60E20D03A81008F2749 /* Main.storyboard */,
-				6582C61120D03A82008F2749 /* Assets.xcassets */,
+				6582C61C20D03B50008F2749 /* View */,
+				6582C61D20D03B59008F2749 /* Controllers */,
+				6582C61E20D03B73008F2749 /* Supporting Files */,
 				6582C61320D03A82008F2749 /* LaunchScreen.storyboard */,
-				6582C61620D03A82008F2749 /* Info.plist */,
 			);
 			path = "Clock Style";
+			sourceTree = "<group>";
+		};
+		6582C61C20D03B50008F2749 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6582C60E20D03A81008F2749 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6582C61D20D03B59008F2749 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6582C60C20D03A81008F2749 /* ClockController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		6582C61E20D03B73008F2749 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6582C61F20D03BA1008F2749 /* Fonts */,
+				6582C61120D03A82008F2749 /* Assets.xcassets */,
+				6582C61620D03A82008F2749 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6582C61F20D03BA1008F2749 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				6582C62320D03C6E008F2749 /* DS-Digital.ttf */,
+				6582C62420D03C6F008F2749 /* lcddot.ttf */,
+				6582C62220D03BFC008F2749 /* Orbitron-Bold.ttf */,
+				6582C62020D03BEA008F2749 /* NeonTubes2.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,8 +165,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6582C62520D03C6F008F2749 /* DS-Digital.ttf in Resources */,
 				6582C61520D03A82008F2749 /* LaunchScreen.storyboard in Resources */,
 				6582C61220D03A82008F2749 /* Assets.xcassets in Resources */,
+				6582C62120D03BEA008F2749 /* NeonTubes2.otf in Resources */,
+				6582C62620D03C6F008F2749 /* lcddot.ttf in Resources */,
 				6582C61020D03A81008F2749 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -135,7 +181,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6582C60D20D03A81008F2749 /* ViewController.swift in Sources */,
+				6582C60D20D03A81008F2749 /* ClockController.swift in Sources */,
 				6582C60B20D03A81008F2749 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,7 +333,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.rinconmountaintech.Clock-Style";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rinconmountaintech.clockstyle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -305,7 +351,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.rinconmountaintech.Clock-Style";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rinconmountaintech.clockstyle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
