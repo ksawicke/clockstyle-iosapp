@@ -103,7 +103,7 @@ class ClockController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ClockController.updateClock), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ClockController.updateClock), userInfo: nil, repeats: true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -121,6 +121,10 @@ class ClockController: UIViewController {
         
         timeFormat = regionData[currentRegion]["regionName"]!
         currentRegionDescription = regionData[currentRegion]["description"]!
+        
+        if timeFormat != "France" {
+//            timeSlotSep1.frame.size.width = 15
+        }
         
         switch(timeFormat) {
         case "America", "America24":
@@ -181,10 +185,10 @@ class ClockController: UIViewController {
             timeSlotSep1.text = ":"
             timeSlotM1.text = timeMinutesDigit1
             timeSlotM2.text = timeMinutesDigit2
-            timeSlotSep2.text = ":"
-            timeSlotS1.text = timeSecondsDigit1
-            timeSlotS2.text = timeSecondsDigit2
-            timeSlotSep3.text = ""
+//            timeSlotSep2.text = ":"
+//            timeSlotS1.text = timeSecondsDigit1
+//            timeSlotS2.text = timeSecondsDigit2
+//            timeSlotSep3.text = ""
             
             if(timeFormat == "America24") {
                 timeEnding = ""
@@ -245,13 +249,13 @@ class ClockController: UIViewController {
             timeSlotBeg.text = ""
             timeSlotH1.text = timeHoursDigit1
             timeSlotH2.text = timeHoursDigit2
-            timeSlotSep1.text = " h "
+            timeSlotSep1.text = "h"
             timeSlotM1.text = timeMinutesDigit1
             timeSlotM2.text = timeMinutesDigit2
-            timeSlotSep2.text = " m "
-            timeSlotS1.text = timeSecondsDigit1
-            timeSlotS2.text = timeSecondsDigit2
-            timeSlotSep3.text = " s"
+//            timeSlotSep2.text = " m "
+//            timeSlotS1.text = timeSecondsDigit1
+//            timeSlotS2.text = timeSecondsDigit2
+//            timeSlotSep3.text = " s"
             timeSlotEnd.text = " \(timeEnding)"
             
             dateSlot1.text = "\(thisDayofWeek)"
@@ -374,10 +378,10 @@ class ClockController: UIViewController {
             timeSlotSep1.text = ":"
             timeSlotM1.text = timeMinutesDigit1
             timeSlotM2.text = timeMinutesDigit2
-            timeSlotSep2.text = ":"
-            timeSlotS1.text = timeSecondsDigit1
-            timeSlotS2.text = timeSecondsDigit2
-            timeSlotSep3.text = ""
+//            timeSlotSep2.text = ":"
+//            timeSlotS1.text = timeSecondsDigit1
+//            timeSlotS2.text = timeSecondsDigit2
+//            timeSlotSep3.text = ""
             timeSlotEnd.text = " \(timeEnding)"
             
             dateSlot1.text = "\(thisDayofWeek)"
@@ -478,10 +482,10 @@ class ClockController: UIViewController {
             timeSlotSep1.text = ":"
             timeSlotM1.text = timeMinutesDigit1
             timeSlotM2.text = timeMinutesDigit2
-            timeSlotSep2.text = ":"
-            timeSlotS1.text = timeSecondsDigit1
-            timeSlotS2.text = timeSecondsDigit2
-            timeSlotSep3.text = ""
+//            timeSlotSep2.text = ":"
+//            timeSlotS1.text = timeSecondsDigit1
+//            timeSlotS2.text = timeSecondsDigit2
+//            timeSlotSep3.text = ""
             timeSlotEnd.text = " \(timeEnding)"
             
             dateSlot1.text = "\(thisDayofWeek)"
@@ -539,10 +543,10 @@ class ClockController: UIViewController {
             timeSlotSep1.text = ":"
             timeSlotM1.text = timeMinutesDigit1
             timeSlotM2.text = timeMinutesDigit2
-            timeSlotSep2.text = ":"
-            timeSlotS1.text = timeSecondsDigit1
-            timeSlotS2.text = timeSecondsDigit2
-            timeSlotSep3.text = ""
+//            timeSlotSep2.text = ":"
+//            timeSlotS1.text = timeSecondsDigit1
+//            timeSlotS2.text = timeSecondsDigit2
+//            timeSlotSep3.text = ""
             timeSlotEnd.text = " \(timeEnding)"
             
             dateSlot1.text = "\(thisDayofWeek)"
@@ -567,15 +571,15 @@ class ClockController: UIViewController {
             updateBgImage(bgImage: themeSettings["bgImage"]!)
         }
         
-        if themeSettings["font"] == "custom" {
-            updateFont(font: themeSettings["fontName"]!)
-        }
-        
-        if themeSettings["fontEffect"] == "glow" {
-            makeFontGlow(fontColor: themeSettings["fontColor"]!)
-        } else {
-            makeFontNoGlow(fontColor: themeSettings["fontColor"]!)
-        }
+//        if themeSettings["font"] == "custom" {
+//            updateFont(font: themeSettings["fontName"]!)
+//        }
+//        
+//        if themeSettings["fontEffect"] == "glow" {
+//            makeFontGlow(fontColor: themeSettings["fontColor"]!)
+//        } else {
+//            makeFontNoGlow(fontColor: themeSettings["fontColor"]!)
+//        }
         
         updateFontColor(fontColor: themeSettings["fontColor"]!)
     }
@@ -650,10 +654,10 @@ class ClockController: UIViewController {
         timeSlotSep1.textColor = newColor
         timeSlotM1.textColor = newColor
         timeSlotM2.textColor = newColor
-        timeSlotSep2.textColor = newColor
-        timeSlotS1.textColor = newColor
-        timeSlotS2.textColor = newColor
-        timeSlotSep3.textColor = newColor
+//        timeSlotSep2.textColor = newColor
+//        timeSlotS1.textColor = newColor
+//        timeSlotS2.textColor = newColor
+//        timeSlotSep3.textColor = newColor
         timeSlotEnd.textColor = newColor
         
         dateSlot1.textColor = newColor
@@ -676,10 +680,10 @@ class ClockController: UIViewController {
         timeSlotSep1.font = newFont
         timeSlotM1.font = newFont
         timeSlotM2.font = newFont
-        timeSlotSep2.font = newFont
-        timeSlotS1.font = newFont
-        timeSlotS2.font = newFont
-        timeSlotSep3.font = newFont
+//        timeSlotSep2.font = newFont
+//        timeSlotS1.font = newFont
+//        timeSlotS2.font = newFont
+//        timeSlotSep3.font = newFont
         
         timeSlotEnd.font = newFontSm
         
@@ -729,33 +733,33 @@ class ClockController: UIViewController {
         timeSlotM2.layer.masksToBounds = false
         timeSlotM2.layer.shouldRasterize = false
         
-        timeSlotSep2.layer.shadowColor = newColor.cgColor
-        timeSlotSep2.layer.shadowOffset = .zero
-        timeSlotSep2.layer.shadowRadius = 0.0
-        timeSlotSep2.layer.shadowOpacity = 0.0
-        timeSlotSep2.layer.masksToBounds = false
-        timeSlotSep2.layer.shouldRasterize = false
-        
-        timeSlotS1.layer.shadowColor = newColor.cgColor
-        timeSlotS1.layer.shadowOffset = .zero
-        timeSlotS1.layer.shadowRadius = 0.0
-        timeSlotS1.layer.shadowOpacity = 0.0
-        timeSlotS1.layer.masksToBounds = false
-        timeSlotS1.layer.shouldRasterize = false
-        
-        timeSlotS2.layer.shadowColor = newColor.cgColor
-        timeSlotS2.layer.shadowOffset = .zero
-        timeSlotS2.layer.shadowRadius = 0.0
-        timeSlotS2.layer.shadowOpacity = 0.0
-        timeSlotS2.layer.masksToBounds = false
-        timeSlotS2.layer.shouldRasterize = false
-        
-        timeSlotSep3.layer.shadowColor = newColor.cgColor
-        timeSlotSep3.layer.shadowOffset = .zero
-        timeSlotSep3.layer.shadowRadius = 0.0
-        timeSlotSep3.layer.shadowOpacity = 0.0
-        timeSlotSep3.layer.masksToBounds = false
-        timeSlotSep3.layer.shouldRasterize = false
+//        timeSlotSep2.layer.shadowColor = newColor.cgColor
+//        timeSlotSep2.layer.shadowOffset = .zero
+//        timeSlotSep2.layer.shadowRadius = 0.0
+//        timeSlotSep2.layer.shadowOpacity = 0.0
+//        timeSlotSep2.layer.masksToBounds = false
+//        timeSlotSep2.layer.shouldRasterize = false
+//
+//        timeSlotS1.layer.shadowColor = newColor.cgColor
+//        timeSlotS1.layer.shadowOffset = .zero
+//        timeSlotS1.layer.shadowRadius = 0.0
+//        timeSlotS1.layer.shadowOpacity = 0.0
+//        timeSlotS1.layer.masksToBounds = false
+//        timeSlotS1.layer.shouldRasterize = false
+//
+//        timeSlotS2.layer.shadowColor = newColor.cgColor
+//        timeSlotS2.layer.shadowOffset = .zero
+//        timeSlotS2.layer.shadowRadius = 0.0
+//        timeSlotS2.layer.shadowOpacity = 0.0
+//        timeSlotS2.layer.masksToBounds = false
+//        timeSlotS2.layer.shouldRasterize = false
+//
+//        timeSlotSep3.layer.shadowColor = newColor.cgColor
+//        timeSlotSep3.layer.shadowOffset = .zero
+//        timeSlotSep3.layer.shadowRadius = 0.0
+//        timeSlotSep3.layer.shadowOpacity = 0.0
+//        timeSlotSep3.layer.masksToBounds = false
+//        timeSlotSep3.layer.shouldRasterize = false
         
         timeSlotEnd.layer.shadowColor = newColor.cgColor
         timeSlotEnd.layer.shadowOffset = .zero
@@ -838,33 +842,33 @@ class ClockController: UIViewController {
         timeSlotM2.layer.masksToBounds = false
         timeSlotM2.layer.shouldRasterize = true
         
-        timeSlotSep2.layer.shadowColor = newColor.cgColor
-        timeSlotSep2.layer.shadowOffset = .zero
-        timeSlotSep2.layer.shadowRadius = 25.0
-        timeSlotSep2.layer.shadowOpacity = 0.9
-        timeSlotSep2.layer.masksToBounds = false
-        timeSlotSep2.layer.shouldRasterize = true
-        
-        timeSlotS1.layer.shadowColor = newColor.cgColor
-        timeSlotS1.layer.shadowOffset = .zero
-        timeSlotS1.layer.shadowRadius = 25.0
-        timeSlotS1.layer.shadowOpacity = 0.9
-        timeSlotS1.layer.masksToBounds = false
-        timeSlotS1.layer.shouldRasterize = true
-        
-        timeSlotS2.layer.shadowColor = newColor.cgColor
-        timeSlotS2.layer.shadowOffset = .zero
-        timeSlotS2.layer.shadowRadius = 25.0
-        timeSlotS2.layer.shadowOpacity = 0.9
-        timeSlotS2.layer.masksToBounds = false
-        timeSlotS2.layer.shouldRasterize = true
-        
-        timeSlotSep3.layer.shadowColor = newColor.cgColor
-        timeSlotSep3.layer.shadowOffset = .zero
-        timeSlotSep3.layer.shadowRadius = 25.0
-        timeSlotSep3.layer.shadowOpacity = 0.9
-        timeSlotSep3.layer.masksToBounds = false
-        timeSlotSep3.layer.shouldRasterize = true
+//        timeSlotSep2.layer.shadowColor = newColor.cgColor
+//        timeSlotSep2.layer.shadowOffset = .zero
+//        timeSlotSep2.layer.shadowRadius = 25.0
+//        timeSlotSep2.layer.shadowOpacity = 0.9
+//        timeSlotSep2.layer.masksToBounds = false
+//        timeSlotSep2.layer.shouldRasterize = true
+//
+//        timeSlotS1.layer.shadowColor = newColor.cgColor
+//        timeSlotS1.layer.shadowOffset = .zero
+//        timeSlotS1.layer.shadowRadius = 25.0
+//        timeSlotS1.layer.shadowOpacity = 0.9
+//        timeSlotS1.layer.masksToBounds = false
+//        timeSlotS1.layer.shouldRasterize = true
+//
+//        timeSlotS2.layer.shadowColor = newColor.cgColor
+//        timeSlotS2.layer.shadowOffset = .zero
+//        timeSlotS2.layer.shadowRadius = 25.0
+//        timeSlotS2.layer.shadowOpacity = 0.9
+//        timeSlotS2.layer.masksToBounds = false
+//        timeSlotS2.layer.shouldRasterize = true
+//
+//        timeSlotSep3.layer.shadowColor = newColor.cgColor
+//        timeSlotSep3.layer.shadowOffset = .zero
+//        timeSlotSep3.layer.shadowRadius = 25.0
+//        timeSlotSep3.layer.shadowOpacity = 0.9
+//        timeSlotSep3.layer.masksToBounds = false
+//        timeSlotSep3.layer.shouldRasterize = true
         
         timeSlotEnd.layer.shadowColor = newColor.cgColor
         timeSlotEnd.layer.shadowOffset = .zero
