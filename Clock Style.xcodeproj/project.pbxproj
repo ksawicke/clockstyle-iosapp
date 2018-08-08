@@ -17,10 +17,14 @@
 		6582C62520D03C6F008F2749 /* DS-Digital.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6582C62320D03C6E008F2749 /* DS-Digital.ttf */; };
 		6582C62620D03C6F008F2749 /* lcddot.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6582C62420D03C6F008F2749 /* lcddot.ttf */; };
 		6582C62720D049CD008F2749 /* Orbitron-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6582C62220D03BFC008F2749 /* Orbitron-Bold.ttf */; };
+		65E2DB39211B600100A52311 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 65E2DB38211B600100A52311 /* Settings.bundle */; };
+		CF9A5425534A3DF3FF11E811 /* Pods_Clock_Style.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39D632121BDAC7DB2DB6DCE5 /* Pods_Clock_Style.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		031A030D055D437AF9AB2D6D /* Pods-Clock Style.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clock Style.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Clock Style/Pods-Clock Style.debug.xcconfig"; sourceTree = "<group>"; };
 		2526F195997CDACFE3F33EC5 /* Pods_Clock_Style.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Clock_Style.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		39D632121BDAC7DB2DB6DCE5 /* Pods_Clock_Style.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Clock_Style.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6582C60720D03A81008F2749 /* Clock Style.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clock Style.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6582C60A20D03A81008F2749 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6582C60C20D03A81008F2749 /* ClockController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockController.swift; sourceTree = "<group>"; };
@@ -32,6 +36,8 @@
 		6582C62220D03BFC008F2749 /* Orbitron-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Orbitron-Bold.ttf"; sourceTree = "<group>"; };
 		6582C62320D03C6E008F2749 /* DS-Digital.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DS-Digital.ttf"; sourceTree = "<group>"; };
 		6582C62420D03C6F008F2749 /* lcddot.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lcddot.ttf; sourceTree = "<group>"; };
+		65E2DB38211B600100A52311 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		C465A7A413EBFAFC5CEBC1A0 /* Pods-Clock Style.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clock Style.release.xcconfig"; path = "Pods/Target Support Files/Pods-Clock Style/Pods-Clock Style.release.xcconfig"; sourceTree = "<group>"; };
 		D094F0F838E8998354AC2D0F /* Pods-Clock Style.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clock Style.release.xcconfig"; path = "Pods/Target Support Files/Pods-Clock Style/Pods-Clock Style.release.xcconfig"; sourceTree = "<group>"; };
 		D87461C904A1397F154C8B3F /* Pods-Clock Style.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clock Style.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Clock Style/Pods-Clock Style.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -42,19 +48,37 @@
 			buildActionMask = 2147483647;
 			files = (
 				51B75E8C9F17CDDC9151B505 /* Pods_Clock_Style.framework in Frameworks */,
+				CF9A5425534A3DF3FF11E811 /* Pods_Clock_Style.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0ECB4DCAB23EC27BD5350752 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				031A030D055D437AF9AB2D6D /* Pods-Clock Style.debug.xcconfig */,
+				C465A7A413EBFAFC5CEBC1A0 /* Pods-Clock Style.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		62696550AE704A6EA8CEA322 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				39D632121BDAC7DB2DB6DCE5 /* Pods_Clock_Style.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6582C5FE20D03A81008F2749 = {
 			isa = PBXGroup;
 			children = (
+				65E2DB38211B600100A52311 /* Settings.bundle */,
 				6582C60920D03A81008F2749 /* Clock Style */,
-				6582C60820D03A81008F2749 /* Products */,
-				CC474F0B2EC4757B37D772D0 /* Pods */,
-				AF1801C8C72AA7673BFB083A /* Frameworks */,
+				0ECB4DCAB23EC27BD5350752 /* Pods */,
+				62696550AE704A6EA8CEA322 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +88,7 @@
 				6582C60720D03A81008F2749 /* Clock Style.app */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		6582C60920D03A81008F2749 /* Clock Style */ = {
@@ -72,8 +97,11 @@
 				6582C60A20D03A81008F2749 /* AppDelegate.swift */,
 				6582C61C20D03B50008F2749 /* View */,
 				6582C61D20D03B59008F2749 /* Controllers */,
-				6582C61E20D03B73008F2749 /* Supporting Files */,
 				6582C61320D03A82008F2749 /* LaunchScreen.storyboard */,
+				6582C61E20D03B73008F2749 /* Supporting Files */,
+				6582C60820D03A81008F2749 /* Products */,
+				CC474F0B2EC4757B37D772D0 /* Pods */,
+				AF1801C8C72AA7673BFB083A /* Frameworks */,
 			);
 			path = "Clock Style";
 			sourceTree = "<group>";
@@ -121,6 +149,7 @@
 				2526F195997CDACFE3F33EC5 /* Pods_Clock_Style.framework */,
 			);
 			name = Frameworks;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		CC474F0B2EC4757B37D772D0 /* Pods */ = {
@@ -130,6 +159,7 @@
 				D094F0F838E8998354AC2D0F /* Pods-Clock Style.release.xcconfig */,
 			);
 			name = Pods;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +222,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65E2DB39211B600100A52311 /* Settings.bundle in Resources */,
 				6582C62720D049CD008F2749 /* Orbitron-Bold.ttf in Resources */,
 				6582C62520D03C6F008F2749 /* DS-Digital.ttf in Resources */,
 				6582C61520D03A82008F2749 /* LaunchScreen.storyboard in Resources */,
@@ -397,10 +428,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2HXVRM98MN;
+				DEVELOPMENT_TEAM = MPL4JS8WQN;
 				INFOPLIST_FILE = "$(SRCROOT)/Clock Style/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.rinconmountaintech.clockstyle;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rinconmountaintech.rmt-clockstyle";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -413,10 +447,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2HXVRM98MN;
+				DEVELOPMENT_TEAM = MPL4JS8WQN;
 				INFOPLIST_FILE = "$(SRCROOT)/Clock Style/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.rinconmountaintech.clockstyle;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rinconmountaintech.rmt-clockstyle";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
