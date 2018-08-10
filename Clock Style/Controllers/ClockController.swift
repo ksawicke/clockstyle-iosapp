@@ -9,43 +9,73 @@ import UIKit
 
 class ClockController: UIViewController {
     
-    var themes: Array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]
-    var themeData: [[String: String]] = [
-        ["background": "color", "bgColor": "black", "fontColor": "darkGray", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        ["background": "color", "bgColor": "green", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        ["background": "color", "bgColor": "red", "fontColor": "yellow", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        ["background": "color", "bgColor": "orange", "fontColor": "darkGray", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+    var themeInfo: [Int:[String:String]] = [
+        // Wood
+        0: ["background": "image", "bgImage": "1", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        1: ["background": "image", "bgImage": "2", "fontColor": "black", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        2: ["background": "image", "bgImage": "3", "fontColor": "gray", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        3: ["background": "image", "bgImage": "4", "fontColor": "darkBlue", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        4: ["background": "image", "bgImage": "5", "fontColor": "black", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        5: ["background": "image", "bgImage": "6", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        6: ["background": "image", "bgImage": "7", "fontColor": "black", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        7: ["background": "image", "bgImage": "8", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        8: ["background": "image", "bgImage": "9", "fontColor": "bubbleGum", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
         
-        ["background": "color", "bgColor": "black", "fontColor": "red", "font": "custom", "fontName": "DS-Digital", "fontEffect": "glow"],
-        ["background": "color", "bgColor": "black", "fontColor": "neonGreen", "font": "custom", "fontName": "DS-Digital", "fontEffect": "glow"],
-        ["background": "color", "bgColor": "black", "fontColor": "neonYellow", "font": "custom", "fontName": "DS-Digital", "fontEffect": "glow"],
-        ["background": "color", "bgColor": "black", "fontColor": "neonLightBlue", "font": "custom", "fontName": "DS-Digital", "fontEffect": "glow"],
-        ["background": "color", "bgColor": "black", "fontColor": "neonPurple", "font": "custom", "fontName": "DS-Digital", "fontEffect": "glow"],
-        ["background": "color", "bgColor": "black", "fontColor": "neonPink", "font": "custom", "fontName": "DS-Digital", "fontEffect": "glow"],
-        ["background": "color", "bgColor": "black", "fontColor": "white", "font": "custom", "fontName": "DS-Digital", "fontEffect": "glow"],
+        // Stone
+        9: ["background": "image", "bgImage": "10", "fontColor": "neonGreen", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "glow"],
+        10: ["background": "image", "bgImage": "11", "fontColor": "neonYellow", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "glow"],
+        11: ["background": "image", "bgImage": "12", "fontColor": "neonLightBlue", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "glow"],
+        12: ["background": "image", "bgImage": "13", "fontColor": "neonGreen", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "glow"],
+        13: ["background": "image", "bgImage": "14", "fontColor": "orange", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "glow"],
+        14: ["background": "image", "bgImage": "15", "fontColor": "neonPurple", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "glow"],
+        15: ["background": "image", "bgImage": "16", "fontColor": "red", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "glow"],
+        16: ["background": "image", "bgImage": "17", "fontColor": "neonYellow", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "glow"],
+        17: ["background": "image", "bgImage": "18", "fontColor": "neonGreen", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "glow"],
         
-        ["background": "color", "bgColor": "black", "fontColor": "red", "font": "custom", "fontName": "lcddot", "fontEffect": "glow"],
-        ["background": "color", "bgColor": "black", "fontColor": "neonGreen", "font": "custom", "fontName": "lcddot", "fontEffect": "glow"],
-        ["background": "color", "bgColor": "black", "fontColor": "neonYellow", "font": "custom", "fontName": "lcddot", "fontEffect": "glow"],
-        ["background": "color", "bgColor": "black", "fontColor": "neonLightBlue", "font": "custom", "fontName": "lcddot", "fontEffect": "glow"],
-        ["background": "color", "bgColor": "black", "fontColor": "neonPurple", "font": "custom", "fontName": "lcddot", "fontEffect": "glow"],
-        ["background": "color", "bgColor": "black", "fontColor": "neonPink", "font": "custom", "fontName": "lcddot", "fontEffect": "glow"],
-        ["background": "color", "bgColor": "black", "fontColor": "white", "font": "custom", "fontName": "lcddot", "fontEffect": "glow"],
+        // Night
+        18: ["background": "image", "bgImage": "19", "fontColor": "red", "font": "custom", "fontName": "lcddot", "fontEffect": "glow"],
+        19: ["background": "image", "bgImage": "20", "fontColor": "neonLightBlue", "font": "custom", "fontName": "DS-Digital", "fontEffect": "glow"],
+        20: ["background": "image", "bgImage": "21", "fontColor": "neonLightBlue", "font": "custom", "fontName": "DS-Digital", "fontEffect": "glow"],
+        21: ["background": "image", "bgImage": "22", "fontColor": "neonGreen", "font": "custom", "fontName": "lcddot", "fontEffect": "none"],
+        22: ["background": "image", "bgImage": "23", "fontColor": "neonPurple", "font": "custom", "fontName": "lcddot", "fontEffect": "none"],
+        23: ["background": "image", "bgImage": "24", "fontColor": "neonPurple", "font": "custom", "fontName": "DS-Digital", "fontEffect": "none"],
+        24: ["background": "image", "bgImage": "25", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        25: ["background": "image", "bgImage": "26", "fontColor": "orange", "font": "custom", "fontName": "lcddot", "fontEffect": "glow"],
+        26: ["background": "image", "bgImage": "27", "fontColor": "neonYellow", "font": "custom", "fontName": "lcddot", "fontEffect": "glow"],
         
-        ["background": "image", "bgImage": "pexels-photo-960137", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"], // red wood
-        ["background": "image", "bgImage": "pexels-photo-268976", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"], // orange horiz wood
-        ["background": "image", "bgImage": "pexels-photo-296884", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"], // dark brown wood
-        ["background": "image", "bgImage": "pexels-photo-164005", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"], // nicer wood
-        ["background": "image", "bgImage": "pexels-photo-319382", "fontColor": "darkGray", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"], // yellow and orange
-        ["background": "image", "bgImage": "pexels-photo-850796", "fontColor": "darkBlue", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"], // gray paper
+        // Blues
+        27: ["background": "image", "bgImage": "28", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        28: ["background": "image", "bgImage": "29", "fontColor": "neonLightBlue", "font": "custom", "fontName": "lcddot", "fontEffect": "glow"],
+        29: ["background": "image", "bgImage": "30", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        30: ["background": "image", "bgImage": "31", "fontColor": "neonGreen", "font": "custom", "fontName": "lcddot", "fontEffect": "none"],
+        31: ["background": "image", "bgImage": "32", "fontColor": "neonYellow", "font": "custom", "fontName": "lcddot", "fontEffect": "none"],
+        32: ["background": "image", "bgImage": "33", "fontColor": "gray", "font": "custom", "fontName": "lcddot", "fontEffect": "none"],
+        33: ["background": "image", "bgImage": "34", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        34: ["background": "image", "bgImage": "35", "fontColor": "neonYellow", "font": "custom", "fontName": "lcddot", "fontEffect": "glow"],
+        35: ["background": "image", "bgImage": "36", "fontColor": "bubbleGum", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "glow"],
         
-        ["background": "image", "bgImage": "pexels-photo-132197", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"], // flagstone
-        ["background": "image", "bgImage": "pexels-photo-921776", "fontColor": "darkGray", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"], // gray marble
-        ["background": "image", "bgImage": "pexels-photo-245250", "fontColor": "neonLightBlue", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "glow"], // shiny gray tile
-        ["background": "image", "bgImage": "pexels-photo-953218", "fontColor": "darkGray", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"], // concrete
-        ["background": "image", "bgImage": "pexels-photo-1022692", "fontColor": "neonYellow", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "none"], // brown brick
-        ["background": "image", "bgImage": "pexels-photo-1101125", "fontColor": "white", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "glow"] // red brick shadows
-    ]
+        // Warmth
+        36: ["background": "image", "bgImage": "37", "fontColor": "black", "font": "custom", "fontName": "lcddot", "fontEffect": "none"],
+        37: ["background": "image", "bgImage": "38", "fontColor": "white", "font": "custom", "fontName": "lcddot", "fontEffect": "none"],
+        38: ["background": "image", "bgImage": "39", "fontColor": "gray", "font": "custom", "fontName": "DS-Digital", "fontEffect": "none"],
+        39: ["background": "image", "bgImage": "40", "fontColor": "gray", "font": "custom", "fontName": "lcddot", "fontEffect": "none"],
+        40: ["background": "image", "bgImage": "41", "fontColor": "black", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        41: ["background": "image", "bgImage": "42", "fontColor": "gray", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "glow"],
+        42: ["background": "image", "bgImage": "43", "fontColor": "gray", "font": "custom", "fontName": "lcddot", "fontEffect": "none"],
+        43: ["background": "image", "bgImage": "44", "fontColor": "bubbleGum", "font": "custom", "fontName": "lcddot", "fontEffect": "none"],
+        44: ["background": "image", "bgImage": "45", "fontColor": "gray", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        
+        // Coffee
+        45: ["background": "image", "bgImage": "46", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        46: ["background": "image", "bgImage": "47", "fontColor": "neonLightBlue", "font": "custom", "fontName": "lcddot", "fontEffect": "glow"],
+        47: ["background": "image", "bgImage": "48", "fontColor": "neonYellow", "font": "custom", "fontName": "DS-Digital", "fontEffect": "glow"],
+        48: ["background": "image", "bgImage": "49", "fontColor": "orange", "font": "custom", "fontName": "lcddot", "fontEffect": "glow"],
+        49: ["background": "image", "bgImage": "50", "fontColor": "white", "font": "custom", "fontName": "lcddot", "fontEffect": "none"],
+        50: ["background": "image", "bgImage": "51", "fontColor": "black", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        51: ["background": "image", "bgImage": "52", "fontColor": "white", "font": "custom", "fontName": "lcddot", "fontEffect": "none"],
+        52: ["background": "image", "bgImage": "53", "fontColor": "orange", "font": "custom", "fontName": "lcddot", "fontEffect": "glow"],
+        53: ["background": "image", "bgImage": "54", "fontColor": "black", "font": "custom", "fontName": "lcddot", "fontEffect": "none"],
+        ]
     var currentTheme : Int = 0
     
     var regions: Array = [0, 1, 2, 3, 4]
@@ -81,7 +111,7 @@ class ClockController: UIViewController {
     //currentRegionSelected
     
     @IBAction func onClickToggleTheme(_ sender: Any) {
-        if currentTheme == themes.count - 1 {
+        if currentTheme == themeInfo.count - 1 {
             currentTheme = 0
         } else {
             currentTheme += 1
@@ -561,27 +591,30 @@ class ClockController: UIViewController {
     }
     
     func updateTheme() {
-        let themeSettings = themeData[currentTheme]
+        let themeSettings = themeInfo[currentTheme] //themeData[currentTheme]
         
-        if themeSettings["background"] == "color" {
-            updateBgColor(bgColor: themeSettings["bgColor"]!)
+        //        debugPrint(themeInfo[currentTheme])
+        
+        if themeSettings!["background"] == "color" {
+            updateBgColor(bgColor: themeSettings!["bgColor"]!)
         }
         
-        if themeSettings["background"] == "image" {
-            updateBgImage(bgImage: themeSettings["bgImage"]!)
+        if themeSettings!["background"] == "image" {
+            let imageBackgroundName = "theme-background-\(themeSettings!["bgImage"]!)"
+            updateBgImage(bgImage: imageBackgroundName)
         }
         
-//        if themeSettings["font"] == "custom" {
-//            updateFont(font: themeSettings["fontName"]!)
+//        if themeSettings!["font"] == "custom" {
+//            updateFont(font: themeSettings!["fontName"]!)
 //        }
-//        
-//        if themeSettings["fontEffect"] == "glow" {
-//            makeFontGlow(fontColor: themeSettings["fontColor"]!)
+//
+//        if themeSettings!["fontEffect"] == "glow" {
+//            makeFontGlow(fontColor: themeSettings!["fontColor"]!)
 //        } else {
-//            makeFontNoGlow(fontColor: themeSettings["fontColor"]!)
+//            makeFontNoGlow(fontColor: themeSettings!["fontColor"]!)
 //        }
         
-        updateFontColor(fontColor: themeSettings["fontColor"]!)
+        updateFontColor(fontColor: themeSettings!["fontColor"]!)
     }
     
     func getUIColor(color: String) -> UIColor {
@@ -642,7 +675,16 @@ class ClockController: UIViewController {
     }
     
     func updateBgImage(bgImage: String) {
-        view.backgroundColor = UIColor(patternImage: UIImage(named: "\(bgImage).png")!)
+//        view.backgroundColor = UIColor(patternImage: UIImage(named: "\(bgImage).png")!)
+        
+        
+        UIGraphicsBeginImageContext(view.frame.size)
+        var image = UIImage(named: "\(bgImage)")
+        image?.draw(in: view.bounds)
+        image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        view.contentMode = .scaleAspectFill
+        view.backgroundColor = UIColor(patternImage: image!)
     }
     
     func updateFontColor(fontColor: String) {
