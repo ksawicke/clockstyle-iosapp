@@ -9,6 +9,61 @@ import UIKit
 
 class ClockController: UIViewController {
     
+    let defaultFontSize = 30
+    var timeTextView: UITextView = {
+        let screenSize: CGRect = UIScreen.main.bounds
+        
+        // sets time to be 30% screen height
+        let textView = UITextView(frame: CGRect(x: 0.0, y: 20.0, width: screenSize.width, height: (screenSize.height - 0.0) * 0.30))
+        
+        return textView
+    }()
+    
+    var postTimeTextView: UITextView = {
+        let screenSize: CGRect = UIScreen.main.bounds
+        
+        // sets time to be 10% screen height
+        let textView = UITextView(frame: CGRect(x: 0.0, y: (((screenSize.height - 0.0) * 0.30) + 20), width: screenSize.width, height: (screenSize.height - 0.0) * 0.10))
+        
+        return textView
+    }()
+    
+    var dateTextView: UITextView = {
+        let screenSize: CGRect = UIScreen.main.bounds
+        
+        // sets time to be 10% screen height
+        let textView = UITextView(frame: CGRect(x: 0.0, y: (((screenSize.height - 0.0) * 0.40) + 20), width: screenSize.width, height: (screenSize.height - 0.0) * 0.10))
+        
+        return textView
+    }()
+    
+    var timeZoneTextView: UITextView = {
+        let screenSize: CGRect = UIScreen.main.bounds
+        
+        // sets time to be 10% screen height
+        let textView = UITextView(frame: CGRect(x: 0.0, y: (((screenSize.height - 0.0) * 0.50) + 20), width: screenSize.width, height: (screenSize.height - 0.0) * 0.10))
+        
+        return textView
+    }()
+    
+    var spacer1TextView: UITextView = {
+        let screenSize: CGRect = UIScreen.main.bounds
+        
+        // sets time to be 10% screen height
+        let textView = UITextView(frame: CGRect(x: 0.0, y: (((screenSize.height - 0.0) * 0.60) + 20), width: screenSize.width, height: (screenSize.height - 0.0) * 0.30))
+        
+        return textView
+    }()
+
+    var buttonsTextView: UITextView = {
+        let screenSize: CGRect = UIScreen.main.bounds
+        
+        // sets time to be 10% screen height
+        let textView = UITextView(frame: CGRect(x: 0.0, y: (((screenSize.height - 0.0) * 0.90) - 20), width: screenSize.width, height: (screenSize.height - 0.0) * 0.10))
+        
+        return textView
+    }()
+    
     var themeInfo: [Int:[String:String]] = [
         // Wood
         0: ["background": "image", "bgImage": "1", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
@@ -86,7 +141,7 @@ class ClockController: UIViewController {
         ["regionName": "Tanzania", "description": "Swahili"],
         ["regionName": "Congo", "description": "Swahili (Congo)"]
     ]
-    var currentRegion : Int = 0
+    var currentRegion : Int = 4
     var currentRegionDescription : String = ""
     var timeFormat: String = ""
     
@@ -130,10 +185,230 @@ class ClockController: UIViewController {
         updateClock()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+//        let orient = UIApplication.shared.statusBarOrientation
+//
+//        switch orient {
+//
+//            case .portrait:
+//
+//                print("Portrait")
+//
+//            case .landscapeLeft,.landscapeRight :
+//
+//                print("Landscape")
+//
+//            default:
+//
+//                print("Anything But Portrait")
+//        }
+        
+        self.view.subviews.forEach({ $0.removeFromSuperview() })
+        //            self.view.addSubview(self.timeTextView)
+        self.setupLayout()
+        self.updateClock()
+    }
+    
+//    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+//
+//        coordinator.animate(alongsideTransition: { (UIViewControllerTransitionCoordinatorContext) -> Void in
+//
+//            let orient = UIApplication.shared.statusBarOrientation
+//
+//            switch orient {
+//
+//            case .portrait:
+//
+//                print("Portrait")
+//
+//            case .landscapeLeft,.landscapeRight :
+//
+//                print("Landscape")
+//
+//            default:
+//
+//                print("Anything But Portrait")
+//            }
+//
+//        }, completion: { (UIViewControllerTransitionCoordinatorContext) -> Void in
+//            //refresh view once rotation is completed not in will transition as it returns incorrect frame size.Refresh here
+//
+//            self.view.subviews.forEach({ $0.removeFromSuperview() })
+////            self.view.addSubview(self.timeTextView)
+//            self.setupLayout()
+//            self.updateClock()
+//        })
+//        super.viewWillTransition(to: size, with: coordinator)
+//
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupLayout()
+        
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ClockController.updateClock), userInfo: nil, repeats: true)
+    }
+    
+    private func setupLayout() {
+        let screenSize: CGRect = UIScreen.main.bounds
+        
+        // TIME: 30% screen height
+        timeTextView = UITextView(frame: CGRect(x: 0.0, y: 20.0, width: screenSize.width, height: screenSize.height * 0.30))
+        
+        timeTextView.textAlignment = NSTextAlignment.center
+        timeTextView.textColor = UIColor.white
+        timeTextView.backgroundColor = UIColor.black
+        
+        view.addSubview(timeTextView)
+        
+        timeTextView.text = "12 h 00"
+        timeTextView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        timeTextView.heightAnchor.constraint(equalToConstant: timeTextView.frame.size.height).isActive = true
+        timeTextView.isScrollEnabled = false
+        timeTextView.isEditable = false
+        timeTextView.contentInsetAdjustmentBehavior = .never
+        
+        var fontSize = defaultFontSize
+        
+        while fontSize <= 100 {
+            print(timeTextView.contentSize.height)
+            print(timeTextView.frame.size.height)
+            
+            print(timeTextView.contentSize.width)
+            print(timeTextView.frame.size.width)
+            
+            print("LINE HEIGHT: \(timeTextView.font!.lineHeight)")
+            print(numberOfLines(textView: timeTextView))
+            print("#")
+            
+            fontSize += 1
+        }
+        
+        timeTextView.font = UIFont.systemFont(ofSize: (CGFloat(fontSize)), weight: UIFont.Weight(rawValue: 400))
+        timeTextView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
+        
+        // PM: 10% screen height
+        postTimeTextView = UITextView(frame: CGRect(x: 0.0, y: (((screenSize.height - 0.0) * 0.30) + 20), width: screenSize.width, height: (screenSize.height - 0.0) * 0.10))
+        
+        postTimeTextView.textAlignment = NSTextAlignment.center
+        postTimeTextView.textColor = UIColor.white
+        postTimeTextView.backgroundColor = UIColor.black
+        
+        view.addSubview(postTimeTextView)
+        
+        postTimeTextView.text = "PM"
+        postTimeTextView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        postTimeTextView.heightAnchor.constraint(equalToConstant: postTimeTextView.frame.size.height).isActive = true
+        postTimeTextView.isScrollEnabled = false
+        postTimeTextView.isEditable = false
+        postTimeTextView.contentInsetAdjustmentBehavior = .never
+        
+        var postTimeTextFontSize = CGFloat(fontSize) * 0.25
+        postTimeTextFontSize.round()
+        postTimeTextView.font = UIFont.systemFont(ofSize: (CGFloat(postTimeTextFontSize)), weight: UIFont.Weight(rawValue: 200))
+        postTimeTextView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
+        
+        // DATE: 10% screen height
+        dateTextView = UITextView(frame: CGRect(x: 0.0, y: (((screenSize.height - 0.0) * 0.40) + 20), width: screenSize.width, height: (screenSize.height - 0.0) * 0.10))
+        
+        dateTextView.textAlignment = NSTextAlignment.center
+        dateTextView.textColor = UIColor.white
+        dateTextView.backgroundColor = UIColor.black
+        
+        view.addSubview(dateTextView)
+        
+        dateTextView.text = "Wednesday, August 22, 2018"
+        dateTextView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        dateTextView.heightAnchor.constraint(equalToConstant: dateTextView.frame.size.height).isActive = true
+        dateTextView.isScrollEnabled = false
+        dateTextView.isEditable = false
+        dateTextView.contentInsetAdjustmentBehavior = .never
+        
+        var dateTextFontSize = CGFloat(fontSize) * 0.25
+        dateTextFontSize.round()
+        dateTextView.font = UIFont.systemFont(ofSize: (CGFloat(dateTextFontSize)), weight: UIFont.Weight(rawValue: 200))
+        dateTextView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
+        
+        // TIME ZONE: 10% screen height
+        timeZoneTextView = UITextView(frame: CGRect(x: 0.0, y: (((screenSize.height - 0.0) * 0.50) + 20), width: screenSize.width, height: (screenSize.height - 0.0) * 0.10))
+        
+        timeZoneTextView.textAlignment = NSTextAlignment.center
+        timeZoneTextView.textColor = UIColor.white
+        timeZoneTextView.backgroundColor = UIColor.black
+        
+        view.addSubview(timeZoneTextView)
+        
+        timeZoneTextView.text = "Mountain Standard Time"
+        timeZoneTextView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        timeZoneTextView.heightAnchor.constraint(equalToConstant: timeZoneTextView.frame.size.height).isActive = true
+        timeZoneTextView.isScrollEnabled = false
+        timeZoneTextView.isEditable = false
+        timeZoneTextView.contentInsetAdjustmentBehavior = .never
+        
+        var timeZoneTextFontSize = CGFloat(fontSize) * 0.25
+        timeZoneTextFontSize.round()
+        timeZoneTextView.font = UIFont.systemFont(ofSize: (CGFloat(timeZoneTextFontSize)), weight: UIFont.Weight(rawValue: 200))
+        timeZoneTextView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
+        
+        // SPACER: 30% screen height
+        spacer1TextView = UITextView(frame: CGRect(x: 0.0, y: (((screenSize.height - 0.0) * 0.60) + 20), width: screenSize.width, height: (screenSize.height - 0.0) * 0.30))
+        
+        spacer1TextView.textAlignment = NSTextAlignment.center
+        spacer1TextView.textColor = UIColor.white
+        spacer1TextView.backgroundColor = UIColor.black
+        
+        view.addSubview(spacer1TextView)
+        
+        spacer1TextView.text = ""
+        spacer1TextView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        spacer1TextView.heightAnchor.constraint(equalToConstant: spacer1TextView.frame.size.height).isActive = true
+        spacer1TextView.isScrollEnabled = false
+        spacer1TextView.isEditable = false
+        spacer1TextView.contentInsetAdjustmentBehavior = .never
+        
+        var spacer1TextFontSize = CGFloat(fontSize) * 0.25
+        spacer1TextFontSize.round()
+        spacer1TextView.font = UIFont.systemFont(ofSize: (CGFloat(spacer1TextFontSize)), weight: UIFont.Weight(rawValue: 200))
+        spacer1TextView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
+        
+        // BUTTONS: 10% screen height
+        buttonsTextView = UITextView(frame: CGRect(x: 0.0, y: (((screenSize.height - 0.0) * 0.90) - 20), width: screenSize.width, height: (screenSize.height - 0.0) * 0.10))
+        
+        buttonsTextView.textAlignment = NSTextAlignment.left
+        buttonsTextView.textColor = UIColor.white
+        buttonsTextView.backgroundColor = UIColor.black
+        
+        view.addSubview(buttonsTextView)
+        
+        buttonsTextView.text = "BUTTONS!"
+        buttonsTextView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        buttonsTextView.heightAnchor.constraint(equalToConstant: buttonsTextView.frame.size.height).isActive = true
+        buttonsTextView.isScrollEnabled = false
+        buttonsTextView.isEditable = false
+        buttonsTextView.contentInsetAdjustmentBehavior = .never
+        
+        var buttonsTextFontSize = CGFloat(fontSize) * 0.25
+        buttonsTextFontSize.round()
+        buttonsTextView.font = UIFont.systemFont(ofSize: (CGFloat(buttonsTextFontSize)), weight: UIFont.Weight(rawValue: 200))
+        buttonsTextView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
+    }
+    
+    func numberOfLines(textView: UITextView) -> Int {
+        let layoutManager = textView.layoutManager
+        let numberOfGlyphs = layoutManager.numberOfGlyphs
+        var lineRange: NSRange = NSMakeRange(0, 1)
+        var index = 0
+        var numberOfLines = 0
+        
+        while index < numberOfGlyphs {
+            layoutManager.lineFragmentRect(forGlyphAt: index, effectiveRange: &lineRange)
+            index = NSMaxRange(lineRange)
+            numberOfLines += 1
+        }
+        return numberOfLines
     }
     
     override func didReceiveMemoryWarning() {
@@ -209,31 +484,35 @@ class ClockController: UIViewController {
             dateFormatter.dateFormat = "zzz"
             let thisTimezone = dateFormatter.string(from: currentDate as Date)
             
-            timeSlotBeg.text = ""
-            timeSlotH1.text = timeHoursDigit1
-            timeSlotH2.text = timeHoursDigit2
-            timeSlotSep1.text = ":"
-            timeSlotM1.text = timeMinutesDigit1
-            timeSlotM2.text = timeMinutesDigit2
-//            timeSlotSep2.text = ":"
-//            timeSlotS1.text = timeSecondsDigit1
-//            timeSlotS2.text = timeSecondsDigit2
-//            timeSlotSep3.text = ""
-            
+//            timeSlotBeg.text = ""
+//            timeSlotH1.text = timeHoursDigit1
+//            timeSlotH2.text = timeHoursDigit2
+//            timeSlotSep1.text = ":"
+//            timeSlotM1.text = timeMinutesDigit1
+//            timeSlotM2.text = timeMinutesDigit2
+//
             if(timeFormat == "America24") {
                 timeEnding = ""
             }
+//
+//            timeSlotEnd.text = " \(timeEnding)"
+//
+//            dateSlot1.text = "\(thisDayofWeek)"
+//            dateSlot2.text = " \(thisMonth)"
+//            dateSlot3.text = " \(thisDayNumber), "
+//            dateSlot4.text = "\(thisYear)"
+//
+//            timeZoneSlot.text = "\(thisTimezone)"
+//
+//            currentRegionSelected.text = currentRegionDescription
             
-            timeSlotEnd.text = " \(timeEnding)"
+            timeTextView.text = "\(timeHoursDigit1)\(timeHoursDigit2):\(timeMinutesDigit1)\(timeMinutesDigit2)"
             
-            dateSlot1.text = "\(thisDayofWeek)"
-            dateSlot2.text = " \(thisMonth)"
-            dateSlot3.text = " \(thisDayNumber), "
-            dateSlot4.text = "\(thisYear)"
+            postTimeTextView.text = "\(timeEnding)"
             
-            timeZoneSlot.text = "\(thisTimezone)"
+            dateTextView.text = "\(thisDayofWeek) \(thisMonth) \(thisDayNumber), \(thisYear)"
             
-            currentRegionSelected.text = currentRegionDescription
+            timeZoneTextView.text = "\(thisTimezone)"
             
         case "France":
             dateFormatter.locale = NSLocale(localeIdentifier: "fr_FR") as Locale?
@@ -276,26 +555,34 @@ class ClockController: UIViewController {
             dateFormatter.dateFormat = "zzz"
             let thisTimezone = dateFormatter.string(from: currentDate as Date)
             
-            timeSlotBeg.text = ""
-            timeSlotH1.text = timeHoursDigit1
-            timeSlotH2.text = timeHoursDigit2
-            timeSlotSep1.text = "h"
-            timeSlotM1.text = timeMinutesDigit1
-            timeSlotM2.text = timeMinutesDigit2
-//            timeSlotSep2.text = " m "
-//            timeSlotS1.text = timeSecondsDigit1
-//            timeSlotS2.text = timeSecondsDigit2
-//            timeSlotSep3.text = " s"
-            timeSlotEnd.text = " \(timeEnding)"
+//            timeSlotBeg.text = ""
+//            timeSlotH1.text = timeHoursDigit1
+//            timeSlotH2.text = timeHoursDigit2
+//            timeSlotSep1.text = "h"
+//            timeSlotM1.text = timeMinutesDigit1
+//            timeSlotM2.text = timeMinutesDigit2
+////            timeSlotSep2.text = " m "
+////            timeSlotS1.text = timeSecondsDigit1
+////            timeSlotS2.text = timeSecondsDigit2
+////            timeSlotSep3.text = " s"
+//            timeSlotEnd.text = " \(timeEnding)"
+//
+//            dateSlot1.text = "\(thisDayofWeek)"
+//            dateSlot2.text = " le \(thisDayNumber)"
+//            dateSlot3.text = " \(thisMonth) "
+//            dateSlot4.text = "\(thisYear)"
+//
+//            timeZoneSlot.text = "\(thisTimezone)"
+//
+//            currentRegionSelected.text = currentRegionDescription
             
-            dateSlot1.text = "\(thisDayofWeek)"
-            dateSlot2.text = " le \(thisDayNumber)"
-            dateSlot3.text = " \(thisMonth) "
-            dateSlot4.text = "\(thisYear)"
+            timeTextView.text = "\(timeHoursDigit1)\(timeHoursDigit2):\(timeMinutesDigit1)\(timeMinutesDigit2)"
             
-            timeZoneSlot.text = "\(thisTimezone)"
+            postTimeTextView.text = "\(timeEnding)"
             
-            currentRegionSelected.text = currentRegionDescription
+            dateTextView.text = "\(thisDayofWeek) le \(thisDayNumber) \(thisMonth) \(thisYear)"
+            
+            timeZoneTextView.text = "\(thisTimezone)"
             
         case "Tanzania":
             dateFormatter.locale = NSLocale(localeIdentifier: "sw_TZ") as Locale?
@@ -402,26 +689,34 @@ class ClockController: UIViewController {
             dateFormatter.dateFormat = "zzz"
             let thisTimezone = dateFormatter.string(from: currentDate as Date)
             
-            timeSlotBeg.text = "saa "
-            timeSlotH1.text = timeHoursDigit1
-            timeSlotH2.text = timeHoursDigit2
-            timeSlotSep1.text = ":"
-            timeSlotM1.text = timeMinutesDigit1
-            timeSlotM2.text = timeMinutesDigit2
-//            timeSlotSep2.text = ":"
-//            timeSlotS1.text = timeSecondsDigit1
-//            timeSlotS2.text = timeSecondsDigit2
-//            timeSlotSep3.text = ""
-            timeSlotEnd.text = " \(timeEnding)"
+//            timeSlotBeg.text = "saa "
+//            timeSlotH1.text = timeHoursDigit1
+//            timeSlotH2.text = timeHoursDigit2
+//            timeSlotSep1.text = ":"
+//            timeSlotM1.text = timeMinutesDigit1
+//            timeSlotM2.text = timeMinutesDigit2
+////            timeSlotSep2.text = ":"
+////            timeSlotS1.text = timeSecondsDigit1
+////            timeSlotS2.text = timeSecondsDigit2
+////            timeSlotSep3.text = ""
+//            timeSlotEnd.text = " \(timeEnding)"
+//
+//            dateSlot1.text = "\(thisDayofWeek)"
+//            dateSlot2.text = " \(thisMonth)"
+//            dateSlot3.text = " \(thisDayNumber), "
+//            dateSlot4.text = "\(thisYear)"
+//
+//            timeZoneSlot.text = "\(thisTimezone)"
+//
+//            currentRegionSelected.text = currentRegionDescription
+
+            timeTextView.text = "\(timeHoursDigit1)\(timeHoursDigit2):\(timeMinutesDigit1)\(timeMinutesDigit2)"
             
-            dateSlot1.text = "\(thisDayofWeek)"
-            dateSlot2.text = " \(thisMonth)"
-            dateSlot3.text = " \(thisDayNumber), "
-            dateSlot4.text = "\(thisYear)"
+            postTimeTextView.text = "\(timeEnding)"
             
-            timeZoneSlot.text = "\(thisTimezone)"
+            dateTextView.text = "\(thisDayofWeek) \(thisMonth) \(thisDayNumber), \(thisYear)"
             
-            currentRegionSelected.text = currentRegionDescription
+            timeZoneTextView.text = "\(thisTimezone)"
             
         case "Congo":
             dateFormatter.locale = NSLocale(localeIdentifier: "swc_CD") as Locale?
@@ -506,26 +801,34 @@ class ClockController: UIViewController {
                 thisDayofWeek = "Siku ya Kwanza"
             }
             
-            timeSlotBeg.text = "saa "
-            timeSlotH1.text = timeHoursDigit1
-            timeSlotH2.text = timeHoursDigit2
-            timeSlotSep1.text = ":"
-            timeSlotM1.text = timeMinutesDigit1
-            timeSlotM2.text = timeMinutesDigit2
-//            timeSlotSep2.text = ":"
-//            timeSlotS1.text = timeSecondsDigit1
-//            timeSlotS2.text = timeSecondsDigit2
-//            timeSlotSep3.text = ""
-            timeSlotEnd.text = " \(timeEnding)"
+//            timeSlotBeg.text = "saa "
+//            timeSlotH1.text = timeHoursDigit1
+//            timeSlotH2.text = timeHoursDigit2
+//            timeSlotSep1.text = ":"
+//            timeSlotM1.text = timeMinutesDigit1
+//            timeSlotM2.text = timeMinutesDigit2
+////            timeSlotSep2.text = ":"
+////            timeSlotS1.text = timeSecondsDigit1
+////            timeSlotS2.text = timeSecondsDigit2
+////            timeSlotSep3.text = ""
+//            timeSlotEnd.text = " \(timeEnding)"
+//
+//            dateSlot1.text = "\(thisDayofWeek)"
+//            dateSlot2.text = " \(thisDayNumber)"
+//            dateSlot3.text = "/\(thisMonth)"
+//            dateSlot4.text = "/\(thisYear)"
+//
+//            timeZoneSlot.text = "\(thisTimezone)"
+//
+//            currentRegionSelected.text = currentRegionDescription
             
-            dateSlot1.text = "\(thisDayofWeek)"
-            dateSlot2.text = " \(thisDayNumber)"
-            dateSlot3.text = "/\(thisMonth)"
-            dateSlot4.text = "/\(thisYear)"
+            timeTextView.text = "\(timeHoursDigit1)\(timeHoursDigit2):\(timeMinutesDigit1)\(timeMinutesDigit2)"
             
-            timeZoneSlot.text = "\(thisTimezone)"
+            postTimeTextView.text = "\(timeEnding)"
             
-            currentRegionSelected.text = currentRegionDescription
+            dateTextView.text = "\(thisDayofWeek) \(thisDayNumber)/\(thisMonth)/\(thisYear)"
+            
+            timeZoneTextView.text = "\(thisTimezone)"
             
         default:
             dateFormatter.dateFormat = "hh"
@@ -550,7 +853,7 @@ class ClockController: UIViewController {
             let timeSecondsDigit2: String = "\(timeInSeconds[secondsDigitIndex2])"
             
             dateFormatter.dateFormat = "a"
-            let timeEnding = dateFormatter.string(from: currentDate as Date)
+            var timeEnding = dateFormatter.string(from: currentDate as Date)
             
             dateFormatter.dateFormat = "EEE"
             let thisDayofWeek = dateFormatter.string(from: currentDate as Date)
@@ -567,26 +870,34 @@ class ClockController: UIViewController {
             dateFormatter.dateFormat = "zzz"
             let thisTimezone = dateFormatter.string(from: currentDate as Date)
             
-            timeSlotBeg.text = ""
-            timeSlotH1.text = timeHoursDigit1
-            timeSlotH2.text = timeHoursDigit2
-            timeSlotSep1.text = ":"
-            timeSlotM1.text = timeMinutesDigit1
-            timeSlotM2.text = timeMinutesDigit2
-//            timeSlotSep2.text = ":"
-//            timeSlotS1.text = timeSecondsDigit1
-//            timeSlotS2.text = timeSecondsDigit2
-//            timeSlotSep3.text = ""
-            timeSlotEnd.text = " \(timeEnding)"
+            if(timeFormat == "America24") {
+                timeEnding = ""
+            }
             
-            dateSlot1.text = "\(thisDayofWeek)"
-            dateSlot2.text = " \(thisMonth)"
-            dateSlot3.text = " \(thisDayNumber), "
-            dateSlot4.text = "\(thisYear)"
+//            timeSlotBeg.text = ""
+//            timeSlotH1.text = timeHoursDigit1
+//            timeSlotH2.text = timeHoursDigit2
+//            timeSlotSep1.text = ":"
+//            timeSlotM1.text = timeMinutesDigit1
+//            timeSlotM2.text = timeMinutesDigit2
+//            timeSlotEnd.text = " \(timeEnding)"
+//
+//            dateSlot1.text = "\(thisDayofWeek)"
+//            dateSlot2.text = " \(thisMonth)"
+//            dateSlot3.text = " \(thisDayNumber), "
+//            dateSlot4.text = "\(thisYear)"
+//
+//            timeZoneSlot.text = "\(thisTimezone)"
+//
+//            currentRegionSelected.text = currentRegionDescription
             
-            timeZoneSlot.text = "\(thisTimezone)"
+            timeTextView.text = "\(timeHoursDigit1)\(timeHoursDigit2):\(timeMinutesDigit1)\(timeMinutesDigit2)"
             
-            currentRegionSelected.text = currentRegionDescription
+            postTimeTextView.text = "\(timeEnding)"
+            
+            dateTextView.text = "\(thisDayofWeek) \(thisMonth) \(thisDayNumber), \(thisYear)"
+            
+            timeZoneTextView.text = "\(thisTimezone)"
         }
     }
     
@@ -956,4 +1267,3 @@ class ClockController: UIViewController {
     }
     
 }
-
