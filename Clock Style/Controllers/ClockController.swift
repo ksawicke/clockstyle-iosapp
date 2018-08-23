@@ -141,7 +141,7 @@ class ClockController: UIViewController {
         ["regionName": "Tanzania", "description": "Swahili"],
         ["regionName": "Congo", "description": "Swahili (Congo)"]
     ]
-    var currentRegion : Int = 4
+    var currentRegion : Int = 0
     var currentRegionDescription : String = ""
     var timeFormat: String = ""
     
@@ -397,6 +397,36 @@ class ClockController: UIViewController {
         
         // https://stackoverflow.com/questions/24010035/how-to-add-image-and-text-in-uitextview-in-ios
         
+//        let buttonHeight: CGFloat = 44
+//        let contentInset: CGFloat = 8
+//
+//        let button = UIButton(frame: CGRect(x: contentInset, y: buttonsTextView.contentSize.height - buttonHeight - contentInset, width: buttonsTextView.contentSize.width-contentInset*2, height: buttonHeight))
+//
+//        //setup your button here
+//        button.setTitle("BUTTON", for: UIControlState.normal)
+//        button.setTitleColor(UIColor.red, for: UIControlState.normal)
+//        button.backgroundColor = UIColor.lightGray
+//
+//        buttonsTextView.textStorage
+//
+//        buttonsTextView.textStorage.insert(attString, at: buttonsTextView.selectedRange.location)
+        
+        
+        
+        // https://stackoverflow.com/questions/21629784/how-can-i-make-a-clickable-link-in-an-nsattributedstring/29362206
+//        let termsAndConditionsURL = "http://google.com"
+//        let privacyURL            = "http://cnn.com"
+//        let str = "Terms of use"
+//        let attributedString = NSMutableAttributedString(string: str)
+//        var foundRange = attributedString.mutableString.range(of: "Terms of use") //mention the parts of the attributed text you want to tap and get an custom action
+//        attributedString.addAttribute(NSLinkAttributeName, value: termsAndConditionsURL, range: foundRange)
+//        foundRange = attributedString.mutableString.range(of: "Privacy policy")
+//        attributedString.addAttribute(NSLinkAttributeName, value: privacyURL, range: foundRange)
+//        txtView.attributedText = attributedString
+        
+        
+        
+        
         let themeImage: UIImage = UIImage(named: "icons8-theme")!
         let languageImage: UIImage = UIImage(named: "icons8-language")!
         
@@ -408,7 +438,7 @@ class ClockController: UIViewController {
         var newPosition = buttonsTextView.endOfDocument
         buttonsTextView.selectedTextRange = buttonsTextView.textRange(from: newPosition, to: newPosition)
         
-        buttonsTextView.textStorage.append(NSAttributedString(string: " !!!! "))
+        buttonsTextView.textStorage.append(NSAttributedString(string: "    "))
         
         newPosition = buttonsTextView.endOfDocument
         buttonsTextView.selectedTextRange = buttonsTextView.textRange(from: newPosition, to: newPosition)
@@ -417,6 +447,31 @@ class ClockController: UIViewController {
         attachment2.image = languageImage
         let attString2 = NSAttributedString(attachment: attachment2)
         buttonsTextView.textStorage.insert(attString2, at: buttonsTextView.selectedRange.location)
+    }
+    
+    @objc func onImageTap(_ sender: UITapGestureRecognizer) {
+        let textView = sender.view as! UITextView
+        let layoutManager = textView.layoutManager
+        
+        // location of tap in textView coordinates
+        var location = sender.location(in: textView)
+        location.x -= textView.textContainerInset.left;
+        location.y -= textView.textContainerInset.top;
+        
+        // character index at tap location
+        let characterIndex = layoutManager.characterIndex(for: location, in: textView.textContainer, fractionOfDistanceBetweenInsertionPoints: nil)
+        
+        // if index is valid
+        if characterIndex < textView.textStorage.length {
+            
+            // check if the tap location has the custom attribute
+            let attributeValue = textView.attributedText.attribute(NSAttributedStringKey.imagePath, at: characterIndex, effectiveRange: nil) as? String
+            if let value = attributeValue {
+                print("You tapped on \(NSAttributedStringKey.imagePath) and the value is: \(value)")
+            }
+            
+        }
+        
     }
     
     func numberOfLines(textView: UITextView) -> Int {
@@ -1289,4 +1344,8 @@ class ClockController: UIViewController {
         timeZoneSlot.layer.shouldRasterize = true
     }
     
+}
+
+extension NSAttributedStringKey {
+    static let imagePath = NSAttributedStringKey(rawValue: "imagePath")
 }
