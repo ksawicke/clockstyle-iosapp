@@ -383,7 +383,7 @@ class ClockController: UIViewController {
         
         view.addSubview(buttonsTextView)
         
-        buttonsTextView.text = "BUTTONS!"
+        buttonsTextView.text = ""
         buttonsTextView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         buttonsTextView.heightAnchor.constraint(equalToConstant: buttonsTextView.frame.size.height).isActive = true
         buttonsTextView.isScrollEnabled = false
@@ -393,7 +393,30 @@ class ClockController: UIViewController {
         var buttonsTextFontSize = CGFloat(fontSize) * 0.25
         buttonsTextFontSize.round()
         buttonsTextView.font = UIFont.systemFont(ofSize: (CGFloat(buttonsTextFontSize)), weight: UIFont.Weight(rawValue: 200))
-        buttonsTextView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
+        buttonsTextView.setContentOffset(CGPoint(x: 0, y: 5), animated: false)
+        
+        // https://stackoverflow.com/questions/24010035/how-to-add-image-and-text-in-uitextview-in-ios
+        
+        let themeImage: UIImage = UIImage(named: "icons8-theme")!
+        let languageImage: UIImage = UIImage(named: "icons8-language")!
+        
+        let attachment = NSTextAttachment()
+        attachment.image = themeImage
+        let attString = NSAttributedString(attachment: attachment)
+        buttonsTextView.textStorage.insert(attString, at: buttonsTextView.selectedRange.location)
+        
+        var newPosition = buttonsTextView.endOfDocument
+        buttonsTextView.selectedTextRange = buttonsTextView.textRange(from: newPosition, to: newPosition)
+        
+        buttonsTextView.textStorage.append(NSAttributedString(string: " !!!! "))
+        
+        newPosition = buttonsTextView.endOfDocument
+        buttonsTextView.selectedTextRange = buttonsTextView.textRange(from: newPosition, to: newPosition)
+        
+        let attachment2 = NSTextAttachment()
+        attachment2.image = languageImage
+        let attString2 = NSAttributedString(attachment: attachment2)
+        buttonsTextView.textStorage.insert(attString2, at: buttonsTextView.selectedRange.location)
     }
     
     func numberOfLines(textView: UITextView) -> Int {
