@@ -55,7 +55,7 @@ class ClockController: UIViewController {
         return textView
     }()
 
-    var buttonsTextView: UITextView = {
+    var button1TextView: UITextView = {
         let screenSize: CGRect = UIScreen.main.bounds
         
         // sets time to be 10% screen height
@@ -63,6 +63,22 @@ class ClockController: UIViewController {
         
         return textView
     }()
+    var button2TextView: UITextView = {
+        let screenSize: CGRect = UIScreen.main.bounds
+        
+        // sets time to be 10% screen height
+        let textView = UITextView(frame: CGRect(x: 0.0, y: (((screenSize.height - 0.0) * 0.90) - 20), width: screenSize.width, height: (screenSize.height - 0.0) * 0.10))
+        
+        return textView
+    }()
+    
+    let themeButtonHeight: CGFloat = 44
+    let themeButtonContentInset: CGFloat = 8
+    var themeButton: UIButton = UIButton(frame: CGRect(x: 0, y: 0, width: 16, height: 16))
+
+    let languageButtonHeight: CGFloat = 44
+    let languageButtonContentInset: CGFloat = 8
+    var langugageButton: UIButton = UIButton(frame: CGRect(x: 0, y: 0, width: 16, height: 16))
     
     var themeInfo: [Int:[String:String]] = [
         // Wood
@@ -165,26 +181,6 @@ class ClockController: UIViewController {
     
     //currentRegionSelected
     
-    @IBAction func onClickToggleTheme(_ sender: Any) {
-        if currentTheme == themeInfo.count - 1 {
-            currentTheme = 0
-        } else {
-            currentTheme += 1
-        }
-        
-        updateTheme()
-    }
-    
-    @IBAction func onClickToggleRegion(_ sender: Any) {
-        if currentRegion == regions.count - 1 {
-            currentRegion = 0
-        } else {
-            currentRegion += 1
-        }
-        
-        updateClock()
-    }
-    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
@@ -254,13 +250,15 @@ class ClockController: UIViewController {
     
     private func setupLayout() {
         let screenSize: CGRect = UIScreen.main.bounds
+        let themeImage: UIImage = UIImage(named: "icons8-theme")!
+        let languageImage: UIImage = UIImage(named: "icons8-language")!
         
         // TIME: 30% screen height
         timeTextView = UITextView(frame: CGRect(x: 0.0, y: 20.0, width: screenSize.width, height: screenSize.height * 0.30))
         
         timeTextView.textAlignment = NSTextAlignment.center
         timeTextView.textColor = UIColor.white
-        timeTextView.backgroundColor = UIColor.black
+        timeTextView.backgroundColor = UIColor.clear
         
         view.addSubview(timeTextView)
         
@@ -295,7 +293,7 @@ class ClockController: UIViewController {
         
         postTimeTextView.textAlignment = NSTextAlignment.center
         postTimeTextView.textColor = UIColor.white
-        postTimeTextView.backgroundColor = UIColor.black
+        postTimeTextView.backgroundColor = UIColor.clear
         
         view.addSubview(postTimeTextView)
         
@@ -316,7 +314,7 @@ class ClockController: UIViewController {
         
         dateTextView.textAlignment = NSTextAlignment.center
         dateTextView.textColor = UIColor.white
-        dateTextView.backgroundColor = UIColor.black
+        dateTextView.backgroundColor = UIColor.clear
         
         view.addSubview(dateTextView)
         
@@ -337,7 +335,7 @@ class ClockController: UIViewController {
         
         timeZoneTextView.textAlignment = NSTextAlignment.center
         timeZoneTextView.textColor = UIColor.white
-        timeZoneTextView.backgroundColor = UIColor.black
+        timeZoneTextView.backgroundColor = UIColor.clear
         
         view.addSubview(timeZoneTextView)
         
@@ -353,12 +351,13 @@ class ClockController: UIViewController {
         timeZoneTextView.font = UIFont.systemFont(ofSize: (CGFloat(timeZoneTextFontSize)), weight: UIFont.Weight(rawValue: 200))
         timeZoneTextView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
         
-        // SPACER: 30% screen height
-        spacer1TextView = UITextView(frame: CGRect(x: 0.0, y: (((screenSize.height - 0.0) * 0.60) + 20), width: screenSize.width, height: (screenSize.height - 0.0) * 0.30))
+        // SPACER: screen height = 40% - themeImage.size.height - 24
+        let spacerTextViewHeight = ((screenSize.height - 0.0) * 0.40 - themeImage.size.height) - 24
+        spacer1TextView = UITextView(frame: CGRect(x: 0.0, y: (((screenSize.height - 0.0) * 0.60) + 20), width: screenSize.width, height: spacerTextViewHeight))
         
         spacer1TextView.textAlignment = NSTextAlignment.center
         spacer1TextView.textColor = UIColor.white
-        spacer1TextView.backgroundColor = UIColor.black
+        spacer1TextView.backgroundColor = UIColor.clear
         
         view.addSubview(spacer1TextView)
         
@@ -374,26 +373,23 @@ class ClockController: UIViewController {
         spacer1TextView.font = UIFont.systemFont(ofSize: (CGFloat(spacer1TextFontSize)), weight: UIFont.Weight(rawValue: 200))
         spacer1TextView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
         
-        // BUTTONS: 10% screen height
-        buttonsTextView = UITextView(frame: CGRect(x: 0.0, y: (((screenSize.height - 0.0) * 0.90) - 20), width: screenSize.width, height: (screenSize.height - 0.0) * 0.10))
+        // BUTTONS: screen height = themeImage.size.height + 24
+        let buttonsTextViewHeight = themeImage.size.height + 24
+        button1TextView = UITextView(frame: CGRect(x: 0.0, y: (((screenSize.height - 0.0) * 0.90) - 20), width: screenSize.width/2, height: buttonsTextViewHeight))
         
-        buttonsTextView.textAlignment = NSTextAlignment.left
-        buttonsTextView.textColor = UIColor.white
-        buttonsTextView.backgroundColor = UIColor.black
+        button1TextView.textAlignment = NSTextAlignment.center
+        button1TextView.textColor = UIColor.white
+        button1TextView.backgroundColor = UIColor.clear
         
-        view.addSubview(buttonsTextView)
+        view.addSubview(button1TextView)
         
-        buttonsTextView.text = ""
-        buttonsTextView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        buttonsTextView.heightAnchor.constraint(equalToConstant: buttonsTextView.frame.size.height).isActive = true
-        buttonsTextView.isScrollEnabled = false
-        buttonsTextView.isEditable = false
-        buttonsTextView.contentInsetAdjustmentBehavior = .never
+        button2TextView = UITextView(frame: CGRect(x: screenSize.width/2, y: (((screenSize.height - 0.0) * 0.90) - 20), width: screenSize.width/2, height: buttonsTextViewHeight))
         
-        var buttonsTextFontSize = CGFloat(fontSize) * 0.25
-        buttonsTextFontSize.round()
-        buttonsTextView.font = UIFont.systemFont(ofSize: (CGFloat(buttonsTextFontSize)), weight: UIFont.Weight(rawValue: 200))
-        buttonsTextView.setContentOffset(CGPoint(x: 0, y: 5), animated: false)
+        button2TextView.textAlignment = NSTextAlignment.center
+        button2TextView.textColor = UIColor.white
+        button2TextView.backgroundColor = UIColor.clear
+        
+        view.addSubview(button2TextView)
         
         // https://stackoverflow.com/questions/24010035/how-to-add-image-and-text-in-uitextview-in-ios
         
@@ -427,15 +423,68 @@ class ClockController: UIViewController {
         
         
         
-        let themeImage: UIImage = UIImage(named: "icons8-theme")!
-        let languageImage: UIImage = UIImage(named: "icons8-language")!
+        
+        
+        /** THEME BUTTON **/
+        let themeButtonHeight: CGFloat = 44
+        let themeButtonContentInset: CGFloat = 8
+        themeButton = UIButton(frame: CGRect(x: button1TextView.contentSize.width/2, y: button1TextView.contentSize.height - themeButtonHeight - themeButtonContentInset, width: (button1TextView.contentSize.width-themeButtonContentInset*2)/2, height: themeButtonHeight))
+//        buttonTest.setTitle("TEST!", for: .normal)
+        themeButton.setImage(themeImage, for: .normal)
+//        themeButton.setTitleColor(UIColor.blue, for: .normal)
+        
+//        themeButton.backgroundColor = UIColor.black
+//        buttonTest.borderColor = UIColor.yellow
+//        buttonTest.borderWidth = 2
+//        buttonTest.cornerRadius = 3
+//        themeButton.translatesAutoresizingMaskIntoConstraints = false  // DON'T USE!
+//        themeButton.centerYAnchor.constraint(equalTo: button1TextView.centerYAnchor, constant: 0.0).isActive = true
+        themeButton.addTarget(self, action: #selector(self.onClickThemeButton), for: .touchUpInside)
+        button1TextView.addSubview(themeButton)
+        /** /THEME BUTTON **/
+        
+        /** LANGUAGE BUTTON **/
+        let languageButtonHeight: CGFloat = 44
+        let languageButtonContentInset: CGFloat = 8
+        langugageButton = UIButton(frame: CGRect(x: languageButtonContentInset, y: button2TextView.contentSize.height - languageButtonHeight - languageButtonContentInset, width: (button2TextView.contentSize.width-languageButtonContentInset*2)/2, height: languageButtonHeight))
+        //        buttonTest.setTitle("TEST!", for: .normal)
+        langugageButton.setImage(languageImage, for: .normal)
+//        langugageButton.setTitleColor(UIColor.blue, for: .normal)
+//        langugageButton.backgroundColor = UIColor.black
+        //        buttonTest.borderColor = UIColor.yellow
+        //        buttonTest.borderWidth = 2
+        //        buttonTest.cornerRadius = 3
+//        langugageButton.translatesAutoresizingMaskIntoConstraints = false  // DON'T USE!
+        langugageButton.addTarget(self, action: #selector(self.onClickLanguageButton), for: .touchUpInside)
+        // Reference: https://newfivefour.com/swift-ios-add-view-programmatically-autolayout-NSLayoutConstraint.html
+        button2TextView.addSubview(langugageButton)
+        /** /LANGUAGE BUTTON **/
+
+//        var bindings = [ "themeButton" : themeButton, "langugageButton" : langugageButton ]
+//        // picked this arbitrarily ...
+//        var opt = NSLayoutFormatOptions.alignAllTop
+//
+//        var formatString = "[themeButton]-12-[languageButton]"
+//        var c = NSLayoutConstraint.constraints(withVisualFormat: formatString, options: opt, metrics: nil, views: bindings)
+//
+//        view.addConstraints(c)
+
+        
+//        langugageButton.leftAnchor.constraint(equalTo: themeButton.rightAnchor, constant: 0).isActive = true
+//        langugageButton.centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
+//        langugageButton.rightAnchor.constraint(equalTo: sendButton.leftAnchor).isActive = true
+//        langugageButton.heightAnchor.constraint(equalTo: containerView.heightAnchor).isActive = true
+        
+        /***************
+        var newPosition = buttonsTextView.endOfDocument
+        buttonsTextView.selectedTextRange = buttonsTextView.textRange(from: newPosition, to: newPosition)
         
         let attachment = NSTextAttachment()
         attachment.image = themeImage
         let attString = NSAttributedString(attachment: attachment)
         buttonsTextView.textStorage.insert(attString, at: buttonsTextView.selectedRange.location)
         
-        var newPosition = buttonsTextView.endOfDocument
+        newPosition = buttonsTextView.endOfDocument
         buttonsTextView.selectedTextRange = buttonsTextView.textRange(from: newPosition, to: newPosition)
         
         buttonsTextView.textStorage.append(NSAttributedString(string: "    "))
@@ -447,6 +496,27 @@ class ClockController: UIViewController {
         attachment2.image = languageImage
         let attString2 = NSAttributedString(attachment: attachment2)
         buttonsTextView.textStorage.insert(attString2, at: buttonsTextView.selectedRange.location)
+         ****/
+    }
+    
+    @objc func onClickThemeButton(sender: UIButton) {
+        if currentTheme == themeInfo.count - 1 {
+            currentTheme = 0
+        } else {
+            currentTheme += 1
+        }
+        
+        updateTheme()
+    }
+    
+    @objc func onClickLanguageButton(sender: UIButton) {
+        if currentRegion == regions.count - 1 {
+            currentRegion = 0
+        } else {
+            currentRegion += 1
+        }
+        
+        updateClock()
     }
     
     @objc func onImageTap(_ sender: UITapGestureRecognizer) {
@@ -1079,24 +1149,10 @@ class ClockController: UIViewController {
     func updateFontColor(fontColor: String) {
         let newColor = getUIColor(color: fontColor)
         
-        timeSlotBeg.textColor = newColor
-        timeSlotH1.textColor = newColor
-        timeSlotH2.textColor = newColor
-        timeSlotSep1.textColor = newColor
-        timeSlotM1.textColor = newColor
-        timeSlotM2.textColor = newColor
-//        timeSlotSep2.textColor = newColor
-//        timeSlotS1.textColor = newColor
-//        timeSlotS2.textColor = newColor
-//        timeSlotSep3.textColor = newColor
-        timeSlotEnd.textColor = newColor
-        
-        dateSlot1.textColor = newColor
-        dateSlot2.textColor = newColor
-        dateSlot3.textColor = newColor
-        dateSlot4.textColor = newColor
-        
-        timeZoneSlot.textColor = newColor
+        timeTextView.textColor = newColor
+        postTimeTextView.textColor = newColor
+        dateTextView.textColor = newColor
+        timeZoneTextView.textColor = newColor
     }
     
     func updateFont(font: String) {
@@ -1104,26 +1160,31 @@ class ClockController: UIViewController {
         let newFontMed = UIFont(name: font, size: 85)
         let newFontSm = UIFont(name: font, size: 50)
         
-        timeSlotBeg.font = newFontSm
+//        timeSlotBeg.font = newFontSm
         
-        timeSlotH1.font = newFont
-        timeSlotH2.font = newFont
-        timeSlotSep1.font = newFont
-        timeSlotM1.font = newFont
-        timeSlotM2.font = newFont
-//        timeSlotSep2.font = newFont
-//        timeSlotS1.font = newFont
-//        timeSlotS2.font = newFont
-//        timeSlotSep3.font = newFont
+        timeTextView.font = newFont
+        postTimeTextView.font = newFont
+        dateTextView.font = newFont
+        timeZoneTextView.font = newFont
         
-        timeSlotEnd.font = newFontSm
-        
-        dateSlot1.font = newFontMed
-        dateSlot2.font = newFontMed
-        dateSlot3.font = newFontMed
-        dateSlot4.font = newFontMed
-        
-        timeZoneSlot.font = newFontMed
+//        timeSlotH1.font = newFont
+//        timeSlotH2.font = newFont
+//        timeSlotSep1.font = newFont
+//        timeSlotM1.font = newFont
+//        timeSlotM2.font = newFont
+////        timeSlotSep2.font = newFont
+////        timeSlotS1.font = newFont
+////        timeSlotS2.font = newFont
+////        timeSlotSep3.font = newFont
+//
+//        timeSlotEnd.font = newFontSm
+//
+//        dateSlot1.font = newFontMed
+//        dateSlot2.font = newFontMed
+//        dateSlot3.font = newFontMed
+//        dateSlot4.font = newFontMed
+//
+//        timeZoneSlot.font = newFontMed
     }
     
     func makeFontNoGlow(fontColor: String) {
