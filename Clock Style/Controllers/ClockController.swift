@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ClockController: UIViewController {
+class ClockController: UIViewController, ChangeLanguageDelegate {
     
     let defaultFontSize = 30
     var timeTextView: UITextView = {
@@ -71,6 +71,8 @@ class ClockController: UIViewController {
         
         return textView
     }()
+    
+    var languageDelegate : ChangeLanguageDelegate?
     
     let themeButtonHeight: CGFloat = 44
     let themeButtonContentInset: CGFloat = 8
@@ -149,7 +151,7 @@ class ClockController: UIViewController {
         ]
     var currentTheme : Int = 0
     
-    var regions: Array = [0, 1, 2, 3, 4, 5, 6, 7]
+    var regions: Array = [0, 1, 2, 3, 4, 5, 6, 7, 8]
     var regionData: [[String: String]] = [
         ["regionName": "America", "description": "US"],
         ["regionName": "America24", "description": "US (24 HR)"],
@@ -157,7 +159,8 @@ class ClockController: UIViewController {
         ["regionName": "France", "description": "France"],
         ["regionName": "Tanzania", "description": "Swahili"],
         ["regionName": "Congo", "description": "Swahili (Congo)"],
-        ["regionName": "Chinese Mandarin (Traditional)", "description": "Chinese Mandarin (Traditional)"],
+        ["regionName": "ChineseMandarin", "description": "Chinese Mandarin (Traditional)"],
+        ["regionName": "ChineseCantonese", "description": "Chinese Cantonese (Traditional)"],
         ["regionName": "Japanese", "description": "Japanese"]
     ]
     var currentRegion : Int = 0
@@ -514,13 +517,16 @@ class ClockController: UIViewController {
     }
     
     @objc func onClickLanguageButton(sender: UIButton) {
-        if currentRegion == regions.count - 1 {
-            currentRegion = 0
-        } else {
-            currentRegion += 1
-        }
+//        if currentRegion == regions.count - 1 {
+//            currentRegion = 0
+//        } else {
+//            currentRegion += 1
+//        }
         
-        updateClock()
+//        updateClock()
+        
+        let selectLangVC = LanguageController()
+        present(selectLangVC, animated: true, completion: nil)
     }
     
     @objc func onImageTap(_ sender: UITapGestureRecognizer) {
@@ -812,7 +818,8 @@ class ClockController: UIViewController {
             
             timeZoneTextView.text = "\(thisTimezone)"
             
-        case "Chinese Mandarin (Traditional)":
+        case "ChineseMandarin":
+            // http://www.chinasage.info/langdatetime.htm
             dateFormatter.locale = NSLocale(localeIdentifier: "zh_Hant") as Locale?
             
             dateFormatter.dateFormat = "HH"
@@ -879,6 +886,62 @@ class ClockController: UIViewController {
 //            default:
 //                thisDayofWeek = "禮拜日"
 //            }
+            
+            // https://en.wikipedia.org/wiki/Date_and_time_notation_in_Asia#Greater_China
+            if timeInMinutes == "00" {
+                timeTextView.text = "\(timeInHours)時正"
+            } else {
+                timeTextView.text = "\(timeInHours)点\(timeInMinutes)分"
+            }
+            
+            postTimeTextView.text = "\(thisDayofWeek)"
+            
+            // http://www.chinese-word.com/numbers_1_100/instruction2.html
+            dateTextView.text = "\(thisYear) 年  \(thisMonth) 月 \(thisDayNumber) 天"
+            
+            timeZoneTextView.text = "\(thisTimezone)"
+            
+        case "ChineseCantonese":
+            dateFormatter.locale = NSLocale(localeIdentifier: "zh_HK") as Locale?
+            
+            dateFormatter.dateFormat = "HH"
+            let timeInHours = dateFormatter.string(from: currentDate as Date)
+            let hoursDigitIndex1 = timeInHours.index(timeInHours.startIndex, offsetBy: 0)
+            let hoursDigitIndex2 = timeInHours.index(timeInHours.startIndex, offsetBy: 1)
+            let timeHoursDigit1: String = "\(timeInHours[hoursDigitIndex1])"
+            let timeHoursDigit2: String = "\(timeInHours[hoursDigitIndex2])"
+            
+            dateFormatter.dateFormat = "mm"
+            let timeInMinutes = dateFormatter.string(from: currentDate as Date)
+            let minutesDigitIndex1 = timeInMinutes.index(timeInMinutes.startIndex, offsetBy: 0)
+            let minutesDigitIndex2 = timeInMinutes.index(timeInMinutes.startIndex, offsetBy: 1)
+            let timeMinutesDigit1: String = "\(timeInMinutes[minutesDigitIndex1])"
+            let timeMinutesDigit2: String = "\(timeInMinutes[minutesDigitIndex2])"
+            
+            dateFormatter.dateFormat = "ss"
+            let timeInSeconds = dateFormatter.string(from: currentDate as Date)
+            let secondsDigitIndex1 = timeInSeconds.index(timeInSeconds.startIndex, offsetBy: 0)
+            let secondsDigitIndex2 = timeInSeconds.index(timeInSeconds.startIndex, offsetBy: 1)
+            let timeSecondsDigit1: String = "\(timeInSeconds[secondsDigitIndex1])"
+            let timeSecondsDigit2: String = "\(timeInSeconds[secondsDigitIndex2])"
+            
+            dateFormatter.dateFormat = "a"
+            let timeEnding = dateFormatter.string(from: currentDate as Date)
+            
+            dateFormatter.dateFormat = "EEEE"
+            var thisDayofWeek = dateFormatter.string(from: currentDate as Date)
+            
+            dateFormatter.dateFormat = "MM"
+            let thisMonth = dateFormatter.string(from: currentDate as Date)
+            
+            dateFormatter.dateFormat = "d"
+            let thisDayNumber = dateFormatter.string(from: currentDate as Date)
+            
+            dateFormatter.dateFormat = "yyyy"
+            let thisYear = dateFormatter.string(from: currentDate as Date)
+            
+            dateFormatter.dateFormat = "zzz"
+            let thisTimezone = dateFormatter.string(from: currentDate as Date)
             
             // https://en.wikipedia.org/wiki/Date_and_time_notation_in_Asia#Greater_China
             if timeInMinutes == "00" {
@@ -1616,6 +1679,12 @@ class ClockController: UIViewController {
         timeZoneSlot.layer.shadowOpacity = 0.9
         timeZoneSlot.layer.masksToBounds = false
         timeZoneSlot.layer.shouldRasterize = true
+    }
+    
+    func userChangedLanguage(languageNumber: Int) {
+        currentRegion = languageNumber
+        
+        updateClock()
     }
     
 }

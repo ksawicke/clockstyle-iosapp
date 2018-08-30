@@ -17,6 +17,7 @@
 		6582C62520D03C6F008F2749 /* DS-Digital.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6582C62320D03C6E008F2749 /* DS-Digital.ttf */; };
 		6582C62620D03C6F008F2749 /* lcddot.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6582C62420D03C6F008F2749 /* lcddot.ttf */; };
 		6582C62720D049CD008F2749 /* Orbitron-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6582C62220D03BFC008F2749 /* Orbitron-Bold.ttf */; };
+		65E0971721379ABC005CC9D7 /* LanguageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E0971621379ABC005CC9D7 /* LanguageController.swift */; };
 		65E2DB39211B600100A52311 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 65E2DB38211B600100A52311 /* Settings.bundle */; };
 		CF9A5425534A3DF3FF11E811 /* Pods_Clock_Style.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39D632121BDAC7DB2DB6DCE5 /* Pods_Clock_Style.framework */; };
 /* End PBXBuildFile section */
@@ -36,6 +37,7 @@
 		6582C62220D03BFC008F2749 /* Orbitron-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Orbitron-Bold.ttf"; sourceTree = "<group>"; };
 		6582C62320D03C6E008F2749 /* DS-Digital.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DS-Digital.ttf"; sourceTree = "<group>"; };
 		6582C62420D03C6F008F2749 /* lcddot.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lcddot.ttf; sourceTree = "<group>"; };
+		65E0971621379ABC005CC9D7 /* LanguageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageController.swift; sourceTree = "<group>"; };
 		65E2DB38211B600100A52311 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		C465A7A413EBFAFC5CEBC1A0 /* Pods-Clock Style.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clock Style.release.xcconfig"; path = "Pods/Target Support Files/Pods-Clock Style/Pods-Clock Style.release.xcconfig"; sourceTree = "<group>"; };
 		D094F0F838E8998354AC2D0F /* Pods-Clock Style.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clock Style.release.xcconfig"; path = "Pods/Target Support Files/Pods-Clock Style/Pods-Clock Style.release.xcconfig"; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				6582C60C20D03A81008F2749 /* ClockController.swift */,
+				65E0971621379ABC005CC9D7 /* LanguageController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 			files = (
 				6582C60D20D03A81008F2749 /* ClockController.swift in Sources */,
 				6582C60B20D03A81008F2749 /* AppDelegate.swift in Sources */,
+				65E0971721379ABC005CC9D7 /* LanguageController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
